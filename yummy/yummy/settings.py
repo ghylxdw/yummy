@@ -40,6 +40,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'haystack',
+
+    'account',
+    'home',
+    'restaurant',
+    'restaurant_menu',
+    'search',
 )
 
 HAYSTACK_CONNECTIONS = {
@@ -48,7 +54,7 @@ HAYSTACK_CONNECTIONS = {
         'URL': 'http://127.0.0.1:9200/',
         'INDEX_NAME': 'haystack',
     },
-} 
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
