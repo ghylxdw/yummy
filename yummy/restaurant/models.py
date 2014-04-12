@@ -40,3 +40,14 @@ class Recipe(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_location(self):
+        return self.restaurant.location
+
+
+class TemporaryRecipe(models.Model):
+    name = models.CharField(max_length=256)
+    picture = models.ImageField(upload_to='menu-photos')
+
+    def __unicode__(self):
+        return self.name
+
