@@ -38,7 +38,7 @@ class Review(models.Model):
     reviewer = models.ForeignKey(User)
     restaurant = models.ForeignKey(Restaurant)
     content = models.CharField(max_length=3000)
-    rating = models.IntegerField(default=0)
+    rating = models.IntegerField()
     create_time = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
