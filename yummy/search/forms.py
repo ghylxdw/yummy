@@ -14,7 +14,7 @@ class RestaurantSearchForm(SearchForm):
     def clean_sort_by(self):
         sort_by = self.cleaned_data['sort_by']
 
-        if sort_by != 'b' or 'h' or 'd':
+        if sort_by != 'b' and sort_by != 'h' and sort_by != 'd':
             raise forms.ValidationError('sort_by parameter should be b or h or d')
 
         return sort_by
@@ -22,7 +22,7 @@ class RestaurantSearchForm(SearchForm):
     def clean_type(self):
         type = self.cleaned_data['type']
 
-        if type != 'r' or 'm':
+        if type != 'r' and type != 'm':
             raise forms.ValidationError('type parameter should be r or m')
 
         return type
@@ -38,10 +38,19 @@ class RestaurantSearchForm(SearchForm):
         else:
             sqs = sqs.models(Recipe)
 
+        if self.load_all:
+            sqs = sqs.load_all()
+
         center_pnt = Point(self.cleaned_data['longitude'], self.cleaned_data['latitude'])
         distance_from_pnt = D(mi=int(self.cleaned_data['distance']))
 
-        sqs = sqs.auto_query(self.cleaned_data['q']).dwithin('location', center_pnt, distance_from_pnt)
+        # if the query is empty, just search based on location
+        if not 'q' in self.cleaned_data or not self.cleaned_data['q']:
+            sqs = sqs.dwithin('location', center_pnt, distance_from_pnt)
+        else:
+            sqs = sqs.auto_query(self.cleaned_data['q']).dwithin('location', center_pnt, distance_from_pnt)
+
+        # sqs = super(RestaurantSearchForm, self).search()
 
         return sqs
 
