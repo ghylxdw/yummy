@@ -2,7 +2,7 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('',
 
-    url(r'^(?P<restaurant_id>\d+)$', 'restaurant.views.restaurant', name='restaurant'),
+    url(r'^(?P<restaurant_id>\d+)$', 'restaurant.views.restaurant_home', name='restaurant'),
     url(r'^write-review/(?P<restaurant_id>\d+)$', 'restaurant.views.write_review', name='write_review'),
     url(r'^menu/(?P<restaurant_id>\d+)$', 'restaurant.views.menu', name='menu'),
 

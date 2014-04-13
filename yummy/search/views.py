@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from search.forms import RestaurantSearchForm
 from haystack.utils.geo import Point
-from django.http import HttpResponse
 from django.core import serializers
+from django.db import transaction
 
 
 RESULTS_DISPLAY_NUM = 100
@@ -34,6 +34,7 @@ def search(request):
 
 
 # Create response for ajax search
+@transaction.atomic
 def get_search(request):
 
     if request.method != 'GET':
