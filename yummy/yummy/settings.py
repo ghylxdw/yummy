@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__)) + '/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -37,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.gis'
     'haystack',
 
     'search',
@@ -68,6 +70,11 @@ ROOT_URLCONF = 'yummy.urls'
 
 WSGI_APPLICATION = 'yummy.wsgi.application'
 
+# URL to use if the authentication system requires a user to log in.
+LOGIN_URL = '/account/login'
+
+# Default URL to redirect to after a user logs in.
+LOGIN_REDIRECT_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -102,6 +109,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = PROJECT_PATH + '/media/'
+
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(PROJECT_PATH, 'templates'),
 )

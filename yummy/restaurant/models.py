@@ -11,7 +11,7 @@ class Restaurant(models.Model):
     avg_rating = models.FloatField(default=0)
     review_number = models.IntegerField(default=0)
     owner = models.ForeignKey(User)
-    # address = models.CharField(max_length=256)
+    address = models.CharField(max_length=256)
     location = models.PointField(help_text="Represented as (longitude, latitude)")
 
     objects = models.GeoManager()
