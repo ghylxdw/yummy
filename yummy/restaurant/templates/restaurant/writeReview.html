@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Yi's Yummy
+{% endblock %}
+
+{% block main-content %}
+<h2>{{ restaurant }}</h2>
+<!-- 
+<h2>{{ resturant }}</h2>
+-->
+
+<h2>Please write your reviews below</h2>
+
+<form name="Review">
+	<textarea rows="8" cols="100" id="review_id"></textarea><br>
+    <h4>put your over all evaluation here</h4>
+    <label> low </label>
+    <label class="radio-inline">
+  		<input type="radio" id="inlineradio1" value="option1"> 1
+	</label>
+    <label class="radio-inline">
+  		<input type="radio" id="inlineradio1" value="option1"> 2
+	</label>
+    <label class="radio-inline">
+  		<input type="radio" id="inlineradio1" value="option1"> 3
+	</label>
+    <label class="radio-inline">
+  		<input type="radio" id="inlineradio1" value="option1"> 4
+	</label>
+    <label class="radio-inline">
+  		<input type="radio" id="inlineradio1" value="option1"> 5
+	</label>
+    <label> high </label><br>
+    <div class="row">
+	<button class="btn btn-primary" type="submit" onclick="submitReview()">
+ 		<i class="glyphicon glyphicon-check"></i>
+        <span>Submit Review</span>
+    </button>
+   	<button class="btn btn-warning" type="submit" onclick="cancelReview()">
+ 		<i class="glyphicon glyphicon-ban-circle"></i>
+        <span>Cancel Review</span>
+    </button>
+    </div>
+	<input type="hidden" value="12" id="restaurant_id" />
+</form>
+
+{% endblock %}
