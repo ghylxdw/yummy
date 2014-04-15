@@ -12,8 +12,8 @@ Yi's Yummy
 
 <h2>Please write your reviews below</h2>
 
-<form name="Review">
-	<textarea rows="8" cols="100" id="review_id"></textarea><br>
+<form name="Review" action="/restaurant/write-review/{{ restaurant.id }}" method="POST">
+	<textarea rows="8" cols="100" id="review_id" name="content"></textarea><br>
     <h4>put your over all evaluation here</h4>
     <label> low </label>
     <label class="radio-inline">

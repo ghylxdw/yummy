@@ -23,22 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yummy/settings.py">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restaurant/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="24" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1830">
+            <state line="119" column="21" selection-start="3928" selection-end="3938" vertical-scroll-proportion="-38.115383" vertical-offset="659" max-vertical-offset="2205">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restaurant/views.py">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restaurant/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="168" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2280">
-              <folding>
-                <marker date="1397436479000" expanded="true" signature="4117:4400" placeholder="..." />
-              </folding>
+            <state line="14" column="23" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +44,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="49" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+            <state line="2" column="0" selection-start="89" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -55,29 +53,54 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="1" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+            <state line="11" column="30" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/account/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="41" selection-start="3576" selection-end="3576" vertical-scroll-proportion="0.50617284" vertical-offset="1143" max-vertical-offset="2115">
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///Library/Python/2.7/site-packages/django/contrib/auth/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="4" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/views.py">
+        <entry file="file://$PROJECT_DIR$/search/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <marker date="1397439048000" expanded="true" signature="585:588" placeholder="..." />
-                <marker date="1397439048000" expanded="true" signature="652:1035" placeholder="..." />
-              </folding>
+            <state line="33" column="29" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/search/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="30" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="945">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.1433121" vertical-offset="0" max-vertical-offset="942">
+            <state line="43" column="34" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -87,26 +110,6 @@
         <entry file="file://$PROJECT_DIR$/search/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/search/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restaurant/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
               <folding />
             </state>
           </provider>
@@ -122,27 +125,27 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/search/templates/search/indexes/restaurant/restaurant_text.txt" />
         <option value="$PROJECT_DIR$/search/templates/search/indexes/restaurant/recipe_text.txt" />
         <option value="$PROJECT_DIR$/search/search_indexes.py" />
         <option value="/Library/Python/2.7/site-packages/haystack/forms.py" />
-        <option value="$PROJECT_DIR$/search/forms.py" />
         <option value="$PROJECT_DIR$/yummy/urls.py" />
-        <option value="$PROJECT_DIR$/account/urls.py" />
         <option value="$PROJECT_DIR$/restaurant/forms.py" />
         <option value="$PROJECT_DIR$/restaurant/urls.py" />
-        <option value="$PROJECT_DIR$/restaurant/models.py" />
+        <option value="$PROJECT_DIR$/account/models.py" />
+        <option value="$PROJECT_DIR$/restaurant/templates/restaurant/writeReview.html" />
+        <option value="$PROJECT_DIR$/yummy/settings.py" />
+        <option value="$PROJECT_DIR$/search/forms.py" />
         <option value="$PROJECT_DIR$/search/views.py" />
         <option value="$PROJECT_DIR$/restaurant/views.py" />
-        <option value="$PROJECT_DIR$/yummy/settings.py" />
-        <option value="$PROJECT_DIR$/account/models.py" />
-        <option value="$PROJECT_DIR$/account/views.py" />
+        <option value="$PROJECT_DIR$/account/urls.py" />
+        <option value="$PROJECT_DIR$/restaurant/models.py" />
         <option value="$PROJECT_DIR$/account/forms.py" />
+        <option value="$PROJECT_DIR$/account/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="690" />
+    <option name="x" value="56" />
     <option name="y" value="22" />
     <option name="width" value="1567" />
     <option name="height" value="1113" />
@@ -173,7 +176,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,6 +283,10 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restaurant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -312,6 +318,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,6 +326,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -418,7 +426,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="yummy" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -444,27 +472,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="yummy" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -561,15 +569,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="690" y="22" width="1567" height="1113" extended-state="0" />
-    <editor active="false" />
+    <frame x="56" y="22" width="1567" height="1113" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26298487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27409837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -577,12 +585,17 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -596,41 +609,106 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/restaurant/tests.py">
+    <entry file="file://$PROJECT_DIR$/yummy/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state line="96" column="40" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="61" selection-start="2874" selection-end="2874" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="89" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="1365">
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="29" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1515">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
+        <state line="12" column="30" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="945">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restaurant/forms.py">
+    <entry file="file://$PROJECT_DIR$/account/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <folding>
-            <marker date="1397410501000" expanded="true" signature="-1:-1" placeholder="import ..." />
-            <marker date="1397410501000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1397410501000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+        <state line="11" column="32" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="615">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restaurant/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="1" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
+        <state line="14" column="1" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yummy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="223" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+        <state line="8" column="44" selection-start="223" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="36" selection-start="168" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/templates/restaurant/writeReview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="38" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="810" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yummy/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="40" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1920">
           <folding />
         </state>
       </provider>
@@ -642,74 +720,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search/views.py">
+    <entry file="file://$PROJECT_DIR$/search/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state line="12" column="30" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yummy/settings.py">
+    <entry file="file:///Library/Python/2.7/site-packages/django/contrib/auth/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="24" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1830">
+        <state line="24" column="4" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="49" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+        <state line="2" column="0" selection-start="89" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="942">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restaurant/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+        <state line="14" column="23" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="29" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="34" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restaurant/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="168" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2280">
-          <folding>
-            <marker date="1397436479000" expanded="true" signature="4117:4400" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="1" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+        <state line="119" column="21" selection-start="3928" selection-end="3938" vertical-scroll-proportion="-38.115383" vertical-offset="659" max-vertical-offset="2205">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+        <state line="109" column="41" selection-start="3576" selection-end="3576" vertical-scroll-proportion="0.50617284" vertical-offset="1143" max-vertical-offset="2115">
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-            <marker date="1397439048000" expanded="true" signature="585:588" placeholder="..." />
-            <marker date="1397439048000" expanded="true" signature="652:1035" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.1433121" vertical-offset="0" max-vertical-offset="942">
-          <folding />
         </state>
       </provider>
     </entry>

@@ -10,6 +10,7 @@ class RestaurantSearchForm(SearchForm):
     type = forms.CharField()
     longitude = forms.FloatField()
     latitude = forms.FloatField()
+    address = forms.CharField()
 
     def clean_sort_by(self):
         sort_by = self.cleaned_data['sort_by']

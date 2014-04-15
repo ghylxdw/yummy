@@ -84,6 +84,10 @@ def write_review(request, restaurant_id):
         context['errors'] = 'the belonged restaurant does not exist'
         return render(request, 'restaurant/write_review.html', context)
 
+    if restaurant.owner == request.user:
+        context['errors'] = 'you cannot write reviews for your own restaurant'
+        return render(request, 'restaurant/write_review.html', context)
+    
     review = Review(reviewer=request.user, restaurant=restaurant)
     review_form = ReviewForm(request.POST, instance=review)
     context['form'] = review_form
