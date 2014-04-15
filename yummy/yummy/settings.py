@@ -27,6 +27,26 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TEMPLATE_DIRS = (
+    PROJECT_PATH + '/templates/',
+)
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    PROJECT_PATH + '/static/',
+)
 
 # Application definition
 
@@ -38,12 +58,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'django.contrib.gis'
+    'django.contrib.gis',
     'haystack',
 
     'search',
     'account',
-    'restaurant'
+    'restaurant',
+    'home',
 )
 
 HAYSTACK_CONNECTIONS = {
@@ -55,7 +76,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 # allow Haystack to automatically update the index whenever a model is saved/deleted
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,6 +96,8 @@ LOGIN_URL = '/account/login'
 
 # Default URL to redirect to after a user logs in.
 LOGIN_REDIRECT_URL = '/'
+
+ROOT_URLCONF = 'yummy.urls'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -117,6 +140,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = PROJECT_PATH + '/media/'
 
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'templates'),
-)
+
+

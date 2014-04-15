@@ -38,9 +38,10 @@ function onSearch() {
 		        	"longitude" : lng,
 		        	"latitude" : lat,
 		        	"distance" : defaultDist,
+                    "address" : address
 		        };
 
-		        window.location.replace(getURL('search.html', parameters));
+		        window.location.replace(getURL('search', parameters));
 	    	} else {
 	    		alert('Fail to get geocode from google');
 	    	}
