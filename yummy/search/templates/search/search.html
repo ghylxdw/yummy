@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{% statc "css/search.css" %}">
+<script type="text/javascript" src="{% statc "js/search.js" %}"></script>
+{% endblock %}
+
+{% block main-content %}
+
+<h2>Browsing {{ location }}</h2>
+
+<input type="hidden" value="{{ longitude }}" id="lng-hid">
+<input type="hidden" value="{{ latitude }}"  id="lat-hid">
+<input type="hidden" value="{{ q }}" id="q-hid">
+<input type="hidden" value="{{ type }}" id="type-hid">
+
+<div class="row">
+    <table class="table top-border">
+        <tr>
+            <td>
+                <h4>Sort By</h4>
+
+                <div class="radio">
+                <label>
+                <input type="radio" name="sortOpt" id="sortOpt1" value="b" checked>
+                Best Match
+                </label>
+                </div>
+
+                <div class="radio">
+                <label>
+                <input type="radio" name="sortOpt" id="sortOpt2" value="h">
+                Highest Ranked
+                </label>
+                </div>
+
+                <div class="radio">
+                <label>
+                <input type="radio" name="sortOpt" id="sortOpt3" value="d">
+                Smallest Distance
+                </label>
+                </div>
+            </td>
+            <td>
+                <h4>Distance</h4>
+                
+                <div class="radio">
+                <label>
+                <input type="radio" name="distOpt" id="distOpt1" value="2" checked>
+                Walking (2 mi.)
+                </label>
+                </div>
+
+                <div class="radio">
+                <label>
+                <input type="radio" name="distOpt" id="distOpt2" value="5">
+                Driving (5 mi.)
+                </label>
+                </div>
+
+                <div class="radio">
+                <label>
+                <input type="radio" name="distOpt" id="distOpt3" value="10">
+                Bird's view (10 mi.)
+                </label>
+                </div>
+            </td>
+            <td>
+                <h4>Map</h4> 
+                <div id="map-canvas"></div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="inner-wrap">
+    <ul class="list-unstyled" id="rest-list">
+        <li class="row list-space top-border">
+            <div class="col-md-3">
+                <h4> Restaurant Name</h4>
+                <img src="yummy-brand.png" width="160" height="90" alt="restaurant_picture">
+            </div>
+            <div class="col-md-5">
+                <p> we are the best restaurant in Pittsburgh</p>
+                <p> People love us very much</p>
+            </div>
+            <div class="col-md-3">
+                <address>
+                    <strong>Twitter, Inc.</strong>
+                    <br>795 Folsom Ave, Suite 600
+                    <br>San Francisco, CA 94107
+                    <br> <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+            </div>
+        </li>
+
+        <li class="row list-space top-border" data-template>
+            <div class="col-md-3">
+                <h4><a href="{{ url 'restaurant' pk }}">{{ fields.name }}</a></h4>
+                <img src="yummy-brand.png" width="160" height="90" alt="restaurant_picture">
+            </div>
+            <div class="col-md-5">
+                <p>ratings: {{ fields.avg_rating }} total reviews: {{ field.review_number }}</p>
+                <p><strong>Introduction</strong>  </p>
+                <p> {{ fields.introduction }} </p>
+            </div>
+
+            <div class="col-md-3">
+                <address>
+                    <strong>Twitter, Inc.</strong>
+                    <br>795 Folsom Ave, Suite 600
+                    <br>San Francisco, CA 94107
+                    <br> <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+            </div>
+        </li>
+    </ul>
+</div>  
+            
+{% endblock %}
+
+
+            </div>
+        </div>
+    </body>
+</html>
+

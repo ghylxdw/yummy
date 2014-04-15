@@ -1,0 +1,31 @@
+h2 {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+h4 {
+	color: red;
+}
+
+.top-border {
+	border-top: solid;
+	border-top-color: #eee;
+	width: 90%;
+	margin-top: 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.top-border td {
+	padding-left: 50px;
+	text-align: top;
+	width: 200px;
+}
+
+#map-canvas {
+	border-style: solid;
+	border-color: #eee;
+	width: 500px;
+	height: 300px;
+	margin-right: 0%;
+}

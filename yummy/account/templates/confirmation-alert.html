@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% statc "css/signin.css" %}">
+{% endblock %}
+
+{% block content %}
+	<h1 align="center" style="color:blue; font-size: 50px">Confirmation</h1>
+
+	<div style="font-size: 20px; width=500px" align="center" >
+	An email confirmation has been sent to <a href="mailto:{{ email }}">{{ email }}</a>
+	<p>Please click on that link to confirm the email address and complete registration</p>
+	<a href="{% url 'home' %}">Return</a>
+	</div>
+{% endblock %}

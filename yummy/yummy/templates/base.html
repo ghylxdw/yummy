@@ -1,0 +1,77 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta charset="utf-8">
+
+        <title> Yummy </title>
+
+        <link rel="stylesheet" href="{ static "css/bootstrap.min.css" }">
+        <link rel="stylesheet" href="{ static "css/base.css"">
+
+        <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false">
+        </script>
+        <script type="text/javascript" src="{ static "js/jquery.js" }"></script>
+        <script type="text/javascript" src="{ static "js/yummy.js" }"></script>
+        <script type="text/javascript" src="{ static "js/tempo.js" }"></script>        
+
+        {% block head %}
+
+        {% endblock %}
+    </head>
+
+    <body>
+        <header id="header">
+        <nav id="header_outer" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+            <div id="header_brand" class="navbar-header">
+                <a href="/"><img src="{ static "images/yummy-brand.png" }" width="100px" height="64px"></a>
+            </div>
+            
+            <div id="header_menu" class="collapse navbar-collapse navbar-header-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"></li>
+                    <li><a href="">Review</a></li>
+                </ul>
+
+                <form class="navbar-form navbar-left hidden-xs form-inline" role="search" onsubmit="return onSearch()" name="search_form">
+                    <div class="flex-box input-holder">
+                        <div class="label">Find</div>
+                        <input id="find-input" class="controls" type="text" placeholder="Food, Restaurant" >
+
+                        <div class="label">Place</div>
+                        <input id="place-input" class="controls" type="text" placeholder="Location" name="place">
+                        <button type="submit" class="btn">Search</button>
+                    </div>
+
+                    <div id="choose_input_type">
+                        <input type="radio" class="radioinput" name="type" id="food" 
+                        value="m" checked>
+                        <label for="food" class="label" style="margin-right: 50px;">Food</label>
+                        <input type="radio" class="radioinput" name="type" id="restaurant" 
+                        value="r">
+                        <label for="restaurant" class="label">Restaurant</label>
+                    </div>
+
+                    {% csrf_token %}
+                </form>
+
+                <ul class="nav navbar-nav navbar-right ng-scop" ng-controller="user_ctrl" id="header_login">
+                    <li class="divider-vertical hidden-xs"></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Signup</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+
+        <div id="wrap-all">
+            <div id="main" class="inner">
+                {% block main-content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
+
