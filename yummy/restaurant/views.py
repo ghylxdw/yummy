@@ -70,9 +70,9 @@ def restaurant_menu(request, restaurant_id):
 @transaction.atomic
 @login_required
 def write_review(request, restaurant_id):
-    context = {}
+    context = {'restaurant_id', restaurant_id}
+
     if request.method == 'GET':
-        context['restaurant_id'] = restaurant_id
         context['form'] = ReviewForm()
         return render(request, 'restaurant/write_review.html', context)
     try:
@@ -84,6 +84,10 @@ def write_review(request, restaurant_id):
         context['errors'] = 'the belonged restaurant does not exist'
         return render(request, 'restaurant/write_review.html', context)
 
+    if restaurant.owner == request.user:
+        context['errors'] = 'you cannot write reviews for your own restaurant'
+        return render(request, 'restaurant/write_review.html', context)
+    
     review = Review(reviewer=request.user, restaurant=restaurant)
     review_form = ReviewForm(request.POST, instance=review)
     context['form'] = review_form
@@ -101,7 +105,7 @@ def write_review(request, restaurant_id):
     restaurant.review_number += 1
     restaurant.save()
 
-    redirect(reverse('restaurant_home'), kwargs={'restaurant_id': restaurant_id})
+    return redirect(reverse('restaurant_home'), kwargs={'restaurant_id': restaurant_id})
 
 
 # Ajax to get reviews

@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^my-reviews$', 'account.views.my_reviews', name='my_reviews'),
     url(r'^add-restaurant$', 'account.views.add_restaurant', name='add_restaurant'),
     url(r'^edit-restaurant/$(?P<restaurant_id>\d+)$', 'account.views.edit_restaurant', name='edit_restaurant'),
+    url(r'^activate/$(?P<token>.+)$', 'account.views.activate', name='activate'),
 
     # Ajax urls
     # transfer the recipe id in post data

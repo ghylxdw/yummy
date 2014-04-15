@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
     is_customer = models.BooleanField()
     token = models.CharField(max_length=100, db_index=True)
-    user = models.OneToOneField(User, related_name="user_profile")
+    user = models.OneToOneField(User)
 
     def __unicode__(self):
         return self.is_customer + ' ' + self.user

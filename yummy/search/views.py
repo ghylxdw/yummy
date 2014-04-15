@@ -29,6 +29,7 @@ def search(request):
     context['type'] = form.cleaned_data['type']
     context['sort_by'] = form.cleaned_data['sort_by']
     context['distance'] = form.cleaned_data['distance']
+    context['address'] = form.cleaned_data['address']
 
     return render(request, 'search/search.html', context)
 
