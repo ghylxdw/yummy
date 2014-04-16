@@ -64,7 +64,7 @@ def register(request):
 @login_required
 @transaction.atomic
 def my_restaurants(request):
-    context = {}
+    context = {'user': request.user}
 
     if request.user.userprofile.is_customer:
         context['errors'] = 'You are not registered as a restaurant owner'
@@ -82,8 +82,9 @@ def my_reviews(request):
     if request.method != 'GET':
         raise Http404
 
+    context = {'user': request.user}
     reviews = Review.objects.filter(reviewer=request.user).order_by("-create_time")
-    context = {'reviews', reviews}
+    context['reviews'] = reviews
     return render(request, 'account/my-reviews.html', context)
 
 
@@ -117,7 +118,7 @@ def activate(request, token):
 @login_required
 @transaction.atomic
 def add_restaurant(request):
-    context = {}
+    context = {'user': request.user}
     if request.method == 'GET':
         context['form'] = RestaurantForm()
         return render(request, 'account/add-restaurant.html', context)

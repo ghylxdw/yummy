@@ -14,6 +14,8 @@ RESULTS_DISPLAY_NUM = 100
 # Create your views here.
 def search(request):
     context = {}
+    if request.user.is_authenticated():
+        context['user'] = request.user
 
     if request.method != 'GET':
         raise Http404

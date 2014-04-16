@@ -29,10 +29,9 @@ def restaurant_home(request, restaurant_id):
     context['restaurant'] = restaurant
 
     if not request.user.is_authenticated():
-        context['is_login'] = False
         context['is_owner'] = False
     else:
-        context['is_login'] = True
+        context['user'] = request.user
         # if the logged in user is the owner of the restaurant
         if restaurant.owner_id == request.user.id:
             context['is_owner'] = True
@@ -54,6 +53,8 @@ def restaurant_menu(request, restaurant_id):
         raise Http404
 
     context = {}
+    if request.user.is_authenticated():
+        context['user'] = request.user
 
     try:
         restaurant = Restaurant.objects.get(id=restaurant_id)
@@ -70,7 +71,7 @@ def restaurant_menu(request, restaurant_id):
 @transaction.atomic
 @login_required
 def write_review(request, restaurant_id):
-    context = {'restaurant_id', restaurant_id}
+    context = {'restaurant_id': restaurant_id, "user": request.user}
 
     if request.method == 'GET':
         context['form'] = ReviewForm()

@@ -43,15 +43,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_indexes.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/search/search_indexes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="47" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.5555556" vertical-offset="0" max-vertical-offset="972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file:///Library/Python/2.7/site-packages/haystack/forms.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,7 +73,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="37" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2250">
+            <state line="120" column="36" selection-start="3963" selection-end="3963" vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="2265">
               <folding />
             </state>
           </provider>
@@ -102,6 +93,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="33" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/search/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="27" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.63271606" vertical-offset="465" max-vertical-offset="2220">
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,7 +135,6 @@
         <option value="$PROJECT_DIR$/account/models.py" />
         <option value="$PROJECT_DIR$/restaurant/templates/restaurant/writeReview.html" />
         <option value="$PROJECT_DIR$/search/templates/search.html" />
-        <option value="$PROJECT_DIR$/restaurant/views.py" />
         <option value="$PROJECT_DIR$/restaurant/models.py" />
         <option value="$PROJECT_DIR$/account/templates/account/login.html" />
         <option value="$PROJECT_DIR$/account/forms.py" />
@@ -142,7 +143,6 @@
         <option value="$PROJECT_DIR$/account/templates/account/activate-page.html" />
         <option value="$PROJECT_DIR$/yummy/static/css/base.css" />
         <option value="$PROJECT_DIR$/home/templates/home/home.html" />
-        <option value="$PROJECT_DIR$/account/views.py" />
         <option value="$PROJECT_DIR$/search/templates/search/search.html" />
         <option value="$PROJECT_DIR$/search/static/js/search.js" />
         <option value="$PROJECT_DIR$/yummy/templates/base.html" />
@@ -151,8 +151,10 @@
         <option value="$PROJECT_DIR$/yummy/static/js/yummy.js" />
         <option value="$PROJECT_DIR$/yummy/settings.py" />
         <option value="$PROJECT_DIR$/search/forms.py" />
-        <option value="$PROJECT_DIR$/search/views.py" />
         <option value="$PROJECT_DIR$/search/search_indexes.py" />
+        <option value="$PROJECT_DIR$/account/views.py" />
+        <option value="$PROJECT_DIR$/restaurant/views.py" />
+        <option value="$PROJECT_DIR$/search/views.py" />
       </list>
     </option>
   </component>
@@ -464,28 +466,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yummy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yummy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -991,13 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restaurant/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="88" selection-start="3561" selection-end="3638" vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="2205">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/templates/account/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="10" selection-start="1911" selection-end="1911" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="900">
@@ -1066,20 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="53" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="37" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2250">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yummy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="33" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
@@ -1136,15 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="106" selection-start="3803" selection-end="3803" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="2190">
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="32" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
@@ -1156,8 +1106,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/search/search_indexes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="47" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.5555556" vertical-offset="0" max-vertical-offset="972">
+        <state line="39" column="29" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="36" selection-start="3963" selection-end="3963" vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="2265">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="53" selection-start="232" selection-end="232" vertical-scroll-proportion="0.12345679" vertical-offset="0" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="19" selection-start="2191" selection-end="2191" vertical-scroll-proportion="0.86419755" vertical-offset="75" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="27" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.63271606" vertical-offset="465" max-vertical-offset="2220">
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
