@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 	
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% statc "css/signin.css" %}">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "css/signin.css" %}">
 {% endblock %}
 
 
-{% block content %}
+{% block main-content %}
 <div class="container" id="login-panel">
-	<form class="form-signin" action="{% url 'django.contrib.auth.views.login' %}", method="post">
+	<form class="form-signin" action="{% url 'login' %}", method="post">
 		
     <h2 class="form-sign-heading">Please sign in</h2>
 		{% if form.non_field_errors %}

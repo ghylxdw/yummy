@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{% statc "css/search.css" %}">
-<script type="text/javascript" src="{% statc "js/search.js" %}"></script>
+        {% load static %}
+        <link rel="stylesheet" href="{% static "css/search.css" %}">
+        <script type="text/javascript" src="{% static "js/search.js" %}"></script>
 {% endblock %}
 
 {% block main-content %}
@@ -13,6 +14,7 @@
 <input type="hidden" value="{{ latitude }}"  id="lat-hid">
 <input type="hidden" value="{{ q }}" id="q-hid">
 <input type="hidden" value="{{ type }}" id="type-hid">
+<input type="hidden" value="{{ address }}" id="address-hid">
 
 <div class="row">
     <table class="table top-border">
@@ -75,54 +77,29 @@
 </div>
 
 <div class="inner-wrap">
-    <ul class="list-unstyled" id="rest-list">
-        <li class="row list-space top-border">
-            <div class="col-md-3">
-                <h4> Restaurant Name</h4>
-                <img src="yummy-brand.png" width="160" height="90" alt="restaurant_picture">
-            </div>
-            <div class="col-md-5">
-                <p> we are the best restaurant in Pittsburgh</p>
-                <p> People love us very much</p>
-            </div>
-            <div class="col-md-3">
-                <address>
-                    <strong>Twitter, Inc.</strong>
-                    <br>795 Folsom Ave, Suite 600
-                    <br>San Francisco, CA 94107
-                    <br> <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address>
-            </div>
-        </li>
-
-        <li class="row list-space top-border" data-template>
-            <div class="col-md-3">
-                <h4><a href="{{ url 'restaurant' pk }}">{{ fields.name }}</a></h4>
-                <img src="yummy-brand.png" width="160" height="90" alt="restaurant_picture">
-            </div>
-            <div class="col-md-5">
-                <p>ratings: {{ fields.avg_rating }} total reviews: {{ field.review_number }}</p>
-                <p><strong>Introduction</strong>  </p>
-                <p> {{ fields.introduction }} </p>
-            </div>
-
-            <div class="col-md-3">
-                <address>
-                    <strong>Twitter, Inc.</strong>
-                    <br>795 Folsom Ave, Suite 600
-                    <br>San Francisco, CA 94107
-                    <br> <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address>
-            </div>
-        </li>
+    <ul class="list-unstyled" id="restaurant-list">
+{#        <li class="row list-space top-border">#}
+{#            <div class="col-md-3">#}
+{#                <h4> Restaurant Name</h4>#}
+{#                <img src="yummy-brand.png" width="160" height="90" alt="restaurant_picture">#}
+{#            </div>#}
+{#            <div class="col-md-5">#}
+{#                <p> we are the best restaurant in Pittsburgh</p>#}
+{#                <p> People love us very much</p>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <address>#}
+{#                    <strong>Twitter, Inc.</strong>#}
+{#                    <br>795 Folsom Ave, Suite 600#}
+{#                    <br>San Francisco, CA 94107#}
+{#                    <br> <abbr title="Phone">P:</abbr> (123) 456-7890#}
+{#                </address>#}
+{#            </div>#}
+{#        </li>#}
     </ul>
+
 </div>  
             
 {% endblock %}
 
-
-            </div>
-        </div>
-    </body>
-</html>
 

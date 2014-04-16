@@ -110,7 +110,7 @@ def write_review(request, restaurant_id):
 
 # Ajax to get reviews
 @transaction.atomic
-def get_review(request):
+def get_reviews(request):
     if request.method != 'GET':
         return HttpResponse('[]', content_type="application/json")
 

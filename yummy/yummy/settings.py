@@ -76,7 +76,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 # allow Haystack to automatically update the index whenever a model is saved/deleted
-# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

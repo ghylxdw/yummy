@@ -41,7 +41,7 @@ function onSearch() {
                     "address" : address
 		        };
 
-		        window.location.replace(getURL('search', parameters));
+		        window.location.href = getURL('http://localhost:8000/search', parameters);
 	    	} else {
 	    		alert('Fail to get geocode from google');
 	    	}

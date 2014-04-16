@@ -39,10 +39,14 @@ class RestaurantForm(forms.Form):
     address = forms.CharField(max_length=256)
     longitude = forms.FloatField()
     latitude = forms.FloatField()
-    added_recipes = forms.CharField()
+    added_recipes = forms.CharField(required=False)
 
     def clean_added_recipes(self):
         added_recipes = self.cleaned_data['added_recipes']
+        # don't split an empty input
+        if not added_recipes:
+            return added_recipes
+
         recipe_list = added_recipes.split('_')
 
         for recipe_id in recipe_list:

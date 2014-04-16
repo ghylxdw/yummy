@@ -41,12 +41,12 @@ body {
 
 #wrap-all {
 	position: relative;
-	margin-top: 60px;
+	margin-top: 80px;
 	padding-left: 10%;
 	padding-right: 10%;
 }
 
 #main {
 	background: white;
-	padding-bottom: 200px;
+	padding-bottom: 100%;
 }

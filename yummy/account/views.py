@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.views import login as login_view
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from restaurant.models import Restaurant, Review
+from restaurant.models import Restaurant, Review, Recipe
 from account.models import UserProfile
 from account.forms import RegisterForm, RestaurantForm
 from django.db import transaction
@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.http import Http404
+from haystack.utils.geo import Point
 
 
 # Create your views here.
@@ -41,7 +42,7 @@ def register(request):
     new_user = User.objects.create_user(username=form.cleaned_data['email'], password=form.cleaned_data['password1'])
     new_user.is_active = False
     new_user.first_name = form.cleaned_data['fname']
-    new_user.last_name = form.cleaned_Data['lname']
+    new_user.last_name = form.cleaned_data['lname']
     new_user.save()
 
     token = default_token_generator.make_token(new_user)
@@ -53,11 +54,11 @@ def register(request):
     user_profile.save()
 
     # send the activation email to the registered email address
-    message = 'Click this link to activate your account: ' + 'http://localhost:8000/account/activate/' + token
+    message = 'Click this link to activate your account: ' + 'http://ghylxdw.homeip.net:8000/account/activate/' + token
     send_mail('Confirmation from blog', message, 'team39.yummy@gmail.com', [form.cleaned_data['email']], fail_silently=True)
 
     context['email'] = form.cleaned_data['email']
-    return render(request, 'account/activate_required.html', context)
+    return render(request, 'account/activate-required.html', context)
 
 
 @login_required
@@ -122,9 +123,30 @@ def add_restaurant(request):
         return render(request, 'account/add-restaurant.html', context)
 
     form = RestaurantForm(request.POST)
-
+    context['form'] = form
     if not form.is_valid():
-        context['errors'] = ''
+        return render(request, 'account/add-restaurant.html', context)
+
+    location = Point(form.cleaned_data['longitude'], form.cleaned_data['latitude'])
+    new_restaurant = Restaurant(name=form.cleaned_data['name'], introduction=form.cleaned_data['introduction'],
+                                address=form.cleaned_data['address'], owner=request.user, location=location)
+    new_restaurant.save()
+
+    added_recipes = form.cleaned_data['added_recipes']
+    for recipe_str in added_recipes.split('_'):
+        recipe_id = int(recipe_str)
+        try:
+            recipe = Recipe.objects.get(id=recipe_id)
+            recipe.restaurant = new_restaurant
+            recipe.save()
+        except Recipe.DoesNotExist:
+            pass
+
+    redirect(reverse('restaurant_home'), kwargs={'restaurant_id': new_restaurant.id})
+
+
+
+
 
 
 

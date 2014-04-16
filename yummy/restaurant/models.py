@@ -24,7 +24,7 @@ class Restaurant(models.Model):
 class Recipe(models.Model):
     name = models.CharField(max_length=256)
     picture = models.ImageField(upload_to='menu-photos', blank=True)
-    restaurant = models.ForeignKey(Restaurant)
+    restaurant = models.ForeignKey(Restaurant, null=True)
 
     def __unicode__(self):
         return self.name
@@ -43,11 +43,3 @@ class Review(models.Model):
 
     def __unicode__(self):
         return self.reviewer + ' ' + self.content + ' ' + self.restaurant
-
-
-class TemporaryRecipe(models.Model):
-    name = models.CharField(max_length=256)
-    picture = models.ImageField(upload_to='menu-photos')
-
-    def __unicode__(self):
-        return self.name

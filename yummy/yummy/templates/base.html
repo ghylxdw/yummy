@@ -16,7 +16,6 @@
         </script>
         <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
         <script type="text/javascript" src="{% static "js/yummy.js" %}"></script>
-        <script type="text/javascript" src="{% static "js/tempo.js" %}"></script>
 
         {% block head %}
 
@@ -47,12 +46,10 @@
                     </div>
 
                     <div id="choose_input_type">
-                        <input type="radio" class="radioinput" name="type" id="food" 
-                        value="m" checked>
-                        <label for="food" class="label" style="margin-right: 50px;">Food</label>
-                        <input type="radio" class="radioinput" name="type" id="restaurant" 
-                        value="r">
+                        <input type="radio" class="radioinput" name="type" id="restaurant" value="r" checked>
                         <label for="restaurant" class="label">Restaurant</label>
+                        <input type="radio" class="radioinput" name="type" id="food" value="m">
+                        <label for="food" class="label" style="margin-right: 50px;">Food</label>
                     </div>
 
                     {% csrf_token %}
@@ -60,8 +57,14 @@
 
                 <ul class="nav navbar-nav navbar-right ng-scop" ng-controller="user_ctrl" id="header_login">
                     <li class="divider-vertical hidden-xs"></li>
+
+                    {% if is_login %}
+                    <li>{{ user.first_name }}</li>
+                    <li>{{ user.last_name }}</li>
+                    {% else %}
                     <li><a href="{% url 'login' %}">Login</a></li>
                     <li><a href="{% url 'register' %}">Signup</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

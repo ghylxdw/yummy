@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/signin.css" %}">
+{% endblock %}
+
+{% block main-content %}
+<div style="margin-left: 30%; margin-right: 30%;">
+    <div class="container" id="register-panel">
+    {% for error in form.non_field_errors %}
+    <p class="alert alert-danger">
+    {{ error }}
+    </p>
+    {% endfor %}
+    <h2 class="form-sign-heading">Register for an new account</h2>
+    <form method="post" action="{% url 'register' %}">
+        <table>
+        {% for field in form.visible_fields %}
+            {%  if field.html_name == "user_type" %}
+            <tr>
+                <td>
+                    {% for choice in form.user_type %}
+                        {{ choice.tag }}
+                        <label for="uer_type" class="label" style="color: #000000;">{{ choice.choice_label }}</label>
+                    {% endfor %}
+                </td>
+                {% if field.errors %}
+                <td style="color: red">{{ field.errors }}</td>
+                {% endif %}
+            </tr>
+            {% else  %}
+            <tr>
+                <td><input id="{{ field.auto_id }}" name="{{ field.html_name }}" type="{{ field.field.widget.input_type }}" class="form-control" style="width:300px" placeholder="{{field.label}}"></td>
+                {% if field.errors %}
+                <td style="color: red">{{ field.errors }}</td>
+                {% endif %}
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </table>
+        {% for field in form.hidden_fields %}
+        {{field}}
+        {% endfor %}
+        <div style="padding-left:100px; margin-top:20px;">
+        <input type="submit" value="Register" class="btn btn-primary btn-lg"/>
+        <a class="btn btn-primary btn-lg" href="{% url 'login' %}">Cancel</a>
+        </div>
+        {% csrf_token %}
+    </form>
+    </div>
+</div>
+{% endblock %}
+

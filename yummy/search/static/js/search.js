@@ -1,7 +1,7 @@
-function loadMap(center, locations) {
+function loadMap(center, restaurants, zoom) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
-      zoom: 10,
+      zoom: zoom,
       center: center,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
@@ -10,18 +10,22 @@ function loadMap(center, locations) {
 
     var marker, i;
 
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
+    for (i = 0; i < restaurants.length; i++) {
+        var location = restaurants[i].fields.location.split(" ");
+        var lat = parseFloat(location[2]);
+        var lng = parseFloat(location[1].substr(1));
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, lng),
+        map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
           infowindow.open(map, marker);
         }
-      })(marker, i));
+        })(marker, i));
     }
 
 }
@@ -35,46 +39,56 @@ function sendAjax() {
         "longitude" : $('#lng-hid').val(),
         "latitude" : $('#lat-hid').val(),
         "distance" : $('input:radio[name=distOpt]:checked').val(),
+        "address" : $('#address-hid').val()
     };
 
-    console.log(parameters.sort_by + parameters.distance);
-
-// var data = [
-//     {'name':{'first':'Leonard','last':'Marx'},'nickname':'Chico','born':'March 21, 1887','actor': true,'solo_endeavours':[{'title':'Papa Romani'}]},
-//     {'name':{'first':'Adolph','last':'Marx'},'nickname':'Harpo','born':'November 23, 1888','actor':true,'solo_endeavours':[{'title':'Too Many Kisses','rating':'favourite'},{'title':'Stage Door Canteen'}]},
-//     {'name':{'first':'Julius Henry','last':'Marx'},'nickname':'Groucho','born': 'October 2, 1890','actor':true,'solo_endeavours':[{'title':'Copacabana'},{'title':'Mr. Music','rating':'favourite'},{'title':'Double Dynamite'}]},
-//     {'name':{'first':'Milton','last':'Marx'},'nickname':'Gummo','born':'October 23, 1892'},
-//     {'name':{'first':'Herbert','last':'Marx'},'nickname':'Zeppo','born':'February 25, 1901','actor':true,'solo_endeavours':[{'title':'A Kiss in the Dark'}]}
-// ];
-
-//     Tempo.prepare('rest-list').render(data);
-    
-    var center = new google.maps.LatLng(-33.92, 151.25);
-
-    var locations = [
-      ['Bondi Beach', -33.890542, 151.274856, 4],
-      ['Coogee Beach', -33.923036, 151.259052, 5],
-      ['Cronulla Beach', -34.028249, 151.157507, 3],
-      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-      ['Maroubra Beach', -33.950198, 151.259302, 1]
-    ];
-    
-    loadMap(center, locations);
+    var center = new google.maps.LatLng(parameters.latitude, parameters.longitude);
+    var zoom = 16 - Math.floor(parameters.distance/5);
 
 	$.ajax ({
 		datatype: "json",
 	    url: "/get-search",
 	    data: parameters,
 	    success: function(restaurant_list) {
+            loadMap(center, restaurant_list, zoom);
+            clearLi();
             if ( restaurant_list && restaurant_list.length > 0 ) {
-                Tempo.prepare('rest-list').render(restaurant_list);
-                // loadMap(center, restaurant_list);
+                for (var i=0; i<restaurant_list.length; i++) {
+                    drawLi(restaurant_list[i]);
+                }
             } else {
-                alert('No restaurant found!');
+                var li = $("<li class=\"row list-space top-border\">")
+                $("#restaurant-list").append(li);
+                li.append($("<h4>No results found!</h4>"));
             }
-	    },
+        },
 	    async: true,
 	});
+}
+
+function clearLi() {
+    $("#restaurant-list").empty();
+}
+
+function drawLi(restaurant) {
+    var li = $("<li class=\"row list-space top-border\">")
+    $("#restaurant-list").append(li);
+    var div1 = $("<div class=\"col-md-3\" />");
+    var div2 = $("<div class=\"col-md-5\" />");
+    var div3 = $("<div class=\"col-md-3\" />");
+
+    div1.append($("<h4>" + restaurant.fields.name + "</h4>"));
+    div1.append($("<img src=\"\" width=\"160\" height=\"90\" alt=\"restaurant_picture\">"));
+
+    div2.append($("<h4>Rating:" + restaurant.fields.avg_rating + " Reviews: " + restaurant.fields.review_number + "</h4>"));
+    div2.append($("<h4>Introduction</h4>"));
+    div2.append($("<p>" + restaurant.fields.introduction + "</p>"));
+
+    div3.append($("<address>" + restaurant.fields.location + "</address>"));
+
+    li.append(div1);
+    li.append(div2);
+    li.append(div3);
 }
 
 $(document).ready( function() {
