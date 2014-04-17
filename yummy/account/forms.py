@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from restaurant.models import Recipe
 import re
 
 
@@ -56,5 +57,13 @@ class RestaurantForm(forms.Form):
                 raise forms.ValidationError('some added recipe ids are not valid integer')
 
         return added_recipes
+
+
+class RecipeForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        exclude = ['uploader']
+
+
 
 

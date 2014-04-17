@@ -1,6 +1,7 @@
 from django.contrib.gis.db import models
 # User class for built-in authentication module
 from django.contrib.auth.models import User
+from haystack.utils.geo import Point
 
 
 # Create your models here.
@@ -23,14 +24,19 @@ class Restaurant(models.Model):
 # Recipe model
 class Recipe(models.Model):
     name = models.CharField(max_length=256)
-    picture = models.ImageField(upload_to='menu-photos', blank=True)
-    restaurant = models.ForeignKey(Restaurant, null=True)
+    picture = models.ImageField(upload_to='recipe-photos', blank=True)
+    restaurant = models.ForeignKey(Restaurant, null=True, blank=True)
+    uploader = models.ForeignKey(User)
 
     def __unicode__(self):
         return self.name
 
     def get_location(self):
-        return self.restaurant.location
+        # make a trick here that for a temporary uploaded recipe, set a farthest enough position as its location
+        if not self.restaurant:
+            return Point(0, 0)
+        else:
+            return self.restaurant.location
 
 
 # Review model

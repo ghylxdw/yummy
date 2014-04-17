@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import psycopg2.extensions
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__)) + '/'
@@ -110,6 +112,12 @@ DATABASES = {
         'PASSWORD': 'test',
         'HOST': 'localhost',
         'PORT': '5432',
+        'client_encoding': 'UTF8',
+        'default_transaction_isolation': 'SERIALIZABLE',
+        'timezone': 'US/Eastern',
+        'OPTIONS': {
+            'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
+        },
     }
 }
 

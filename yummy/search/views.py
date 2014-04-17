@@ -130,13 +130,3 @@ def get_search(request):
 
     print json_result
     return HttpResponse(json_result, content_type="application/json")
-
-
-
-
-
-
-
-
-
-

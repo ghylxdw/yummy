@@ -30,6 +30,13 @@ class RestaurantSearchForm(SearchForm):
 
         return type
 
+    def clean_distance(self):
+        distance = self.cleaned_data['distance']
+        if distance != 2 and distance != 5 and distance != 10:
+            raise forms.ValidationError('distance should be 2 or 5 or 10 miles')
+
+        return distance
+
     def search(self):
         if not self.is_valid():
             print 'fuck'
