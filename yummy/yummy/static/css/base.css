@@ -13,9 +13,14 @@ body {
 .mag-left-100 {
 	margin-left: 100px;
 }
+
+.navbar-form .input-group-btn,
+.navbar-form .input-group-addon {
+width: auto;
+}
       
 #header{
-	background-color: #FF9900;
+	background-color: #ADD6FF;
 	font-size: 20px;
 	padding-top: 10px;
 	height: 80px;
@@ -36,7 +41,7 @@ body {
 
 #wrap-all {
 	position: relative;
-	margin-top: 60px;
+	margin-top: 80px;
 	padding-left: 10%;
 	padding-right: 10%;
 }

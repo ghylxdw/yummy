@@ -15,7 +15,7 @@
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false">
         </script>
         <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
-        <script type="text/javascript" src="{% static "js/bootstap.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
         <script type="text/javascript" src="{% static "js/yummy.js" %}"></script>
 
         {% block head %}
@@ -39,32 +39,32 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse mag-left-50">
-              <ul class="nav navbar-nav" style="background-color: #FF9900;">
-                <li class="active"><a href="/">Review</a></li>
-              </ul>
+{#              <ul class="nav navbar-nav" style="background-color: #FF9900;">#}
+{#                <li class="active"><a href="/">Review</a></li>#}
+{#              </ul>#}
 
-              <form class="navbar-form navbar-left mag-left-50" role="search" onsubmit="return onSearch()" name="search_form">
-
-                <div class="form-group row container-fluid">
+              <form class="navbar-form navbar-left navbar-input-group mag-left-50" role="search" onsubmit="return onSearch()" name="search_form">
+                <div class="form-group">
                     <div class="col-lg-6">
                       <div class="input-group">
                           <div class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Find<span class="caret"></span></button>
                             <ul class="dropdown-menu pac-container">
-                              <li><a href="#" onClick="chooseType(1);">Restaurant</a></li>
-                              <li><a href="#" onClick="chooseType(0)">Food</a></li>
+                              <li><a onClick="chooseType(1);">Restaurant</a></li>
+                              <li><a onClick="chooseType(0)">Food</a></li>
                             </ul>
                           </div><!-- /btn-group -->
-                      <input type="text" class="form-control" id="find-input" placeholder="Food, Restaurant">
+                      <input type="text" class="form-control fix-length" id="find-input" placeholder="Food, Restaurant">
                       </div>
                     </div><!-- /.col-lg-6 -->
-                    <div class="col-lg-6">
+                   <div class="col-lg-6">
                       <div class="input-group">
                       <span class="input-group-addon">Place</span>
                       <input type="text" class="form-control" id="place-input" placeholder="Location" name="place">
                       </div>
                     </div><!-- /.col-lg-6 -->
                 </div>
+
                 <button type="submit" class="btn btn-default">Search</button>
 
                 <input type="hidden" value="r" id="query-type">
@@ -72,8 +72,14 @@
               </form>
 
               <ul class="nav navbar-nav navbar-right" id="header_login">
+                {% if user.is_authenticated %}
+                    {{ user }}
+                <li>{{ user.first_name }} {{ user.last_name}}</li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'register' %}">Signup</a></li>
+                {% endif %}
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

@@ -38,9 +38,9 @@ class RestaurantForm(forms.Form):
     name = forms.CharField(max_length=256)
     introduction = forms.CharField(max_length=1000)
     address = forms.CharField(max_length=256)
-    longitude = forms.FloatField()
-    latitude = forms.FloatField()
-    added_recipes = forms.CharField(required=False)
+    longitude = forms.FloatField(widget=forms.HiddenInput)
+    latitude = forms.FloatField(widget=forms.HiddenInput)
+    added_recipes = forms.CharField(required=False, widget=forms.HiddenInput)
 
     def clean_added_recipes(self):
         added_recipes = self.cleaned_data['added_recipes']

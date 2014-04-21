@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block main-content %}
-	<h2>{{ user.firstname }} {{ user.lastname }}</h2>
-	<p> My Reviews </p>
+	<h2>{{ user.first_name }} {{ user.last_name }}</h2>
+	<p> My Restaurants </p>
 
-	<button href="{% url 'add_restaurant' %}"></button>
+	<a class="btn" href="{% url 'add_restaurant' %}">Add Restaurant</a>
 	{% for restaurant in restaurants %}
 		{{ restaurant }}
 	{% endfor %}

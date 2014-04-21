@@ -75,7 +75,7 @@ def register(request):
 @login_required
 @transaction.atomic
 def my_restaurants(request):
-    context = {'user': request.user}
+    context = {}
 
     if request.user.userprofile.is_customer:
         context['errors'] = 'You are not registered as a restaurant owner'
@@ -93,7 +93,7 @@ def my_reviews(request):
     if request.method != 'GET':
         raise Http404
 
-    context = {'user': request.user}
+    context = {}
     reviews = Review.objects.filter(reviewer=request.user).order_by("-create_time")
     context['reviews'] = reviews
     return render(request, 'account/my-reviews.html', context)
@@ -119,6 +119,7 @@ def activate(request, token):
 
     user = user_profile.user
     user.is_active = True
+    user.save()
 
     # a tricky method to log a user in without password given
     user.backend = 'django.contrib.auth.backends.ModelBackend'
@@ -129,7 +130,7 @@ def activate(request, token):
 @login_required
 @transaction.atomic
 def add_restaurant(request):
-    context = {'user': request.user}
+    context = {}
     if request.user.userprofile.is_customer:
         context['errors'] = 'you are not a business user and cannot create a restaurant'
         return render(request, 'account/add-restaurant.html', context)
@@ -156,7 +157,7 @@ def add_restaurant(request):
 @login_required
 @transaction.atomic
 def edit_restaurant(request, restaurant_id):
-    context = {'user': request.user}
+    context = {}
     if request.user.userprofile.is_customer:
         context['errors'] = 'you are not a business user and cannot create a restaurant'
         return render(request, 'account/add-restaurant.html', context)
@@ -189,6 +190,15 @@ def edit_restaurant(request, restaurant_id):
         if not form.is_valid():
             return render(request, 'account/edit-restaurant.html', context)
 
+        # update the restaurant information
+        location = Point(form.cleaned_data['longitude'], form.cleaned_data['latitude'])
+        restaurant.name = form.cleaned_data['name']
+        restaurant.introduction = form.cleaned_data['introduction']
+        restaurant.address = form.cleaned_data['address']
+        restaurant.location = location
+        restaurant.save()
+
+        # relate the uploaded recipes to the restaurant
         added_recipes = form.cleaned_data['added_recipes']
         relate_added_recipes_helper(restaurant, added_recipes)
 
