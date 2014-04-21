@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from haystack.utils.geo import Point
 
 
-# Create your models here.
 # Restaurant model including geo information
 class Restaurant(models.Model):
     name = models.CharField(max_length=256)
@@ -24,7 +23,7 @@ class Restaurant(models.Model):
 # Recipe model
 class Recipe(models.Model):
     name = models.CharField(max_length=256)
-    picture = models.ImageField(upload_to='recipe-photos', blank=True)
+    picture = models.ImageField(upload_to='recipe-photos')
     restaurant = models.ForeignKey(Restaurant, null=True, blank=True)
     uploader = models.ForeignKey(User)
 
