@@ -7,3 +7,14 @@
 	padding-left: 10%;
 	padding-right: 10%;
 }
+.star-rating s {
+    color: red;
+    font-size: 50px;
+    cursor: default;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+.star-rating s:before {
+    content: "\2605";
+}

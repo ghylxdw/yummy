@@ -9,7 +9,14 @@
 {% block main-content %}
 	<h2>Welcome to your reviews, {{ user.firstname }} {{ user.lastname }}</h2>
 
-	{% for review in reviews %}
-		{{ review }}
-	{% endfor %}
+	<ul>
+		{% for review in reviews %}
+		<li>	
+			<h4>{{ review.restaurant.name }}</h4><p>{{ review.create_time }}</p>
+			<div class="star-rating"></div>
+			<p>{{ review.content }}</p>
+		</li>
+		{% endfor %}
+	</ul>
+
 {% endblock %}
