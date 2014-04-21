@@ -7,8 +7,7 @@
 {% endblock %}
 
 {% block main-content %}
-	<h2>{{ user.firstname }} {{ user.lastname }}</h2>
-	<p> My Reviews </p>
+	<h2>Welcome to your reviews, {{ user.firstname }} {{ user.lastname }}</h2>
 
 	{% for review in reviews %}
 		{{ review }}

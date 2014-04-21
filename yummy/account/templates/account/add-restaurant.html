@@ -7,42 +7,50 @@
 {% endblock %}
 
 {% block main-content %}
-<div style="margin-left: 30%; margin-right: 30%;">
-    <div class="container" id="register-panel">
+
+<div class="inner-wrap form-border" style="margin-left: 20%; margin-right: 20%;">
+
     <p class="alert alert-danger">
-    {{ errors }}
+        {{ errors }}
     </p>
 
     {% for error in form.non_field_errors %}
-    <p class="alert alert-danger">
-    {{ error }}
-    </p>
+        <p class="alert alert-danger">
+            {{ error }}
+        </p>
     {% endfor %}
 
     <h2 class="form-sign-heading">Add a new restaurant</h2>
-    <form method="post" action="{% url 'add_restaurant' %}">
+
+    <form class="form-center" method="post" action="{% url 'add_restaurant' %} ">
         <table>
-
-            {{ form }}
-
         {% for field in form.visible_fields %}
             <tr>
-                <td><input id="{{ field.auto_id }}" name="{{ field.html_name }}" type="{{ field.field.widget.input_type }}" class="form-control" style="width:300px" placeholder="{{field.label}}"></td>
+                <td><input id="{{ field.auto_id }}" name="{{ field.html_name }}" type="{{ field.field.widget.input_type }}" class="form-control" style="width:300px" placeholder="{{ field.label }}"></td>
                 {% if field.errors %}
                 <td style="color: red">{{ field.errors }}</td>
                 {% endif %}
             </tr>
         {% endfor %}
         </table>
+
+        <table id="restaurant-form">
+            <tr>
+                <td><input class="form-control" placeholder="{{  }}"></td>
+            </tr>
+        </table>
+
+        
         {% for field in form.hidden_fields %}
-        {{field}}
+          {{field}}
         {% endfor %}
-        <div style="padding-left:100px; margin-top:20px;">
-        <input type="submit" value="Add" class="btn btn-primary btn-lg"/>
-        <a class="btn btn-primary btn-lg" href="{% url 'my_restaurants' %}">Cancel</a>
+        
+        <div style="margin-right:50px; margin-top:20px;">
+        <input type="submit" value="Add" class="btn btn-primary col-lg-2" style="height:30px;" />
+        <a class="btn btn-primary col-lg-2" style="height:30px;" href="{% url 'my_restaurants' %}">Cancel</a>
         </div>
         {% csrf_token %}
     </form>
-    </div>
 </div>
+
 {% endblock %}

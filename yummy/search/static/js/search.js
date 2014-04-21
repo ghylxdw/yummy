@@ -91,7 +91,6 @@ $(document).ready( function() {
     sendAjax();
 });
 
-
 $(function()
 {
     $('#sortOpt1').click( function( event )

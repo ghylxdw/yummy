@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
+{% block head %}
+	{% load static %}
+	<script type="text/javascript" src="{% static "js/home.js" %}"></script>
+{% endblock %}
+
 {% block main-content %}
 <h1>  Welcome to Yummy!!! </h1>
-
 {% endblock %}

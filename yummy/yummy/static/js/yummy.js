@@ -4,10 +4,11 @@ function autocomplete() {
 }
 
 function getURL(theUrl, extraParameters) {
+	var hostport = 'http://' + window.location.host;
     var extraParametersEncoded = $.param(extraParameters);
     var seperator = theUrl.indexOf('?') == -1 ? "?" : "&";
 
-    return(theUrl + seperator + extraParametersEncoded);
+    return(hostport + theUrl + seperator + extraParametersEncoded);
 }
 
 function chooseType(type) {
@@ -53,7 +54,7 @@ function onSearch() {
                     "address" : address
 		        };
 
-		        window.location.href = getURL('http://localhost:8000/search', parameters);
+		        window.location.href = getURL('/search', parameters);
 	    	} else {
 	    		alert('Fail to get geocode from google');
 	    	}

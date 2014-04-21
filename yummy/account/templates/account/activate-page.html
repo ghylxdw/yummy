@@ -8,11 +8,13 @@
 {% block main-content %}
 	<h1 align="center" style="color:blue; font-size: 50px">Email Confirmed</h1>
 
-    {{ errors }}
+	<p class="alert alert-danger">
+    	{{ errors }}
+    </p>
 
 	<div style="font-size: 20px; width=500px" align="center" >
 	<a href="mailto:{{ email }}">{{ email }}</a> has been confirmed. 
-	<p>Enjoy using Yi's blog website. Thank you.</p>
+	<p>Enjoy your tour to Yummy. Thank you.</p>
 	<a href="{% url 'login' %}">Please Log in...</a>
 	</div>
 {% endblock %}

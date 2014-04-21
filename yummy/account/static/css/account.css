@@ -1,0 +1,9 @@
+.form-border {
+	border-style: double;
+	border-width: 3px;
+}
+
+.form-center {
+	padding-left: 10%;
+	padding-right: 10%;
+}
