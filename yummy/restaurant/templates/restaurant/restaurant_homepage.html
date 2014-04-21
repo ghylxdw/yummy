@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static "css/search.css" %}">
+        <script type="text/javascript" src="{% static "js/search.js" %}"></script>
+{% endblock %}
+
+{% block main-content %}
+
+<input type="hidden" value="{{ restaurant.id }}" id="restID-hid">
+<input type="hidden" value="{{ longitude }}" id="lng-hid">
+<input type="hidden" value="{{ latitude }}"  id="lat-hid">
+
+{% if error in errors %}
+    <p>{{ error }}</p>
+{% endif %}
+
+<div class="row">
+    <table class="table top-border">
+    <tr>
+        <td>
+            <h2>{{ restaurant.name }}</h2> 
+            <div id="map-canvas"></div>
+        </td>
+        <td>
+            <h4>Introduction</h4>
+            <p>
+                {{ restaurant.introduction }}
+            </p>
+            <h4> Address </h4>
+            <address>
+                <strong>Twitter, Inc.</strong>
+                <br>795 Folsom Ave, Suite 600
+                <br>San Francisco, CA 94107
+                <br> <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+        </td>
+        <td>
+            {% if is_login %}
+                {% if is_owner %}
+                <button class="btn btn-primary" onclick="write_review()">Add Restaurant</button>
+                {% else %}
+                <button class="btn btn-primary" onclick="write_review()">Write Review</button>
+                {% endif %}
+            {% endif %}
+        </td>
+    </tr>
+    </table>
+
+</div>
+
+<div class="inner-wrap">
+    <ul class="list-unstyled" id="review-list">
+        {% for review in review_list %}
+        <li class="row list-space top-border">
+            {{ review.reviewer }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>  
+
+{% endblock %}
+
+

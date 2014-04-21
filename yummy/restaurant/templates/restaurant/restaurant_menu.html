@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/restaurant.css" %}">
+    <script type="text/javascript" src="{% static "js/restaurant.js" %}"></script>
+{% endblock %}
+
+{% block main-content %}
+
+<h2>Recipe in restaurant {{ restaurant }}</h2>
+
+{% if error in errors %}
+    <p>{{ error }}</p>
+{% endif %}
+
+<div class="inner-wrap">
+    <ul class="list-unstyled" id="review-list">
+        {% for recipe in recipe_list %}
+        <li class="row list-space top-border">
+            {{ recipe.name }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>  
+
+{% endblock %}
+
+
+
