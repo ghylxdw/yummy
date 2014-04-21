@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/account.css" %}">
+    <script type="text/javascript" src="{% static "js/account.js" %}"></script>
+{% endblock %}
+
+{% block main-content %}
+	<h2>{{ user.firstname }} {{ user.lastname }}</h2>
+	<p> My Reviews </p>
+
+	<button href="{% url 'add_restaurant' %}"></button>
+	{% for restaurant in restaurants %}
+		{{ restaurant }}
+	{% endfor %}
+{% endblock %}

@@ -6,30 +6,27 @@ Yi's Yummy
 
 {% block main-content %}
 <h2>{{ restaurant }}</h2>
-<!-- 
-<h2>{{ resturant }}</h2>
--->
 
 <h2>Please write your reviews below</h2>
 
-<form name="Review" action="/restaurant/write-review/{{ restaurant.id }}" method="POST">
+<form name="Review" action="{% url 'write_review' restaurant.id %}" method="POST">
 	<textarea rows="8" cols="100" id="review_id" name="content"></textarea><br>
     <h4>put your over all evaluation here</h4>
     <label> low </label>
     <label class="radio-inline">
-  		<input type="radio" id="inlineradio1" value="option1"> 1
+  		<input type="radio" name="inlineradio1" value="option1"> 1
 	</label>
     <label class="radio-inline">
-  		<input type="radio" id="inlineradio1" value="option1"> 2
+  		<input type="radio" name="inlineradio1" value="option1"> 2
 	</label>
     <label class="radio-inline">
-  		<input type="radio" id="inlineradio1" value="option1"> 3
+  		<input type="radio" name="inlineradio1" value="option1"> 3
 	</label>
     <label class="radio-inline">
-  		<input type="radio" id="inlineradio1" value="option1"> 4
+  		<input type="radio" name="inlineradio1" value="option1"> 4
 	</label>
     <label class="radio-inline">
-  		<input type="radio" id="inlineradio1" value="option1"> 5
+  		<input type="radio" name="inlineradio1" value="option1"> 5
 	</label>
     <label> high </label><br>
     <div class="row">

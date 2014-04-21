@@ -51,7 +51,7 @@ function sendAjax() {
 	    data: parameters,
 	    success: function(restaurant_list) {
             loadMap(center, restaurant_list, zoom);
-            clearLi();
+            $("#restaurant-list").empty();
             if ( restaurant_list && restaurant_list.length > 0 ) {
                 for (var i=0; i<restaurant_list.length; i++) {
                     drawLi(restaurant_list[i]);
@@ -64,10 +64,6 @@ function sendAjax() {
         },
 	    async: true,
 	});
-}
-
-function clearLi() {
-    $("#restaurant-list").empty();
 }
 
 function drawLi(restaurant) {

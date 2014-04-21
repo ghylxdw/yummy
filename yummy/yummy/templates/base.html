@@ -15,6 +15,7 @@
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false">
         </script>
         <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/bootstap.min.js" %}"></script>
         <script type="text/javascript" src="{% static "js/yummy.js" %}"></script>
 
         {% block head %}
@@ -23,52 +24,60 @@
     </head>
 
     <body>
-        <header id="header">
-        <nav id="header_outer" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
-            <div id="header_brand" class="navbar-header">
-                <a href="/"><img src="{% static "images/yummy-brand.png" %}" width="100px" height="64px"></a>
+        <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" style="margin-top:-15px;">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/"><img src="{% static "images/yummy-brand.png" %}" height="64px" width="100px"></a>
             </div>
-            
-            <div id="header_menu" class="collapse navbar-collapse navbar-header-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"></li>
-                    <li><a href="">Review</a></li>
-                </ul>
 
-                <form class="navbar-form navbar-left hidden-xs form-inline" role="search" onsubmit="return onSearch()" name="search_form">
-                    <div class="flex-box input-holder">
-                        <div class="label">Find</div>
-                        <input id="find-input" class="controls" type="text" placeholder="Food, Restaurant" >
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse mag-left-50">
+              <ul class="nav navbar-nav" style="background-color: #FF9900;">
+                <li class="active"><a href="/">Review</a></li>
+              </ul>
 
-                        <div class="label">Place</div>
-                        <input id="place-input" class="controls" type="text" placeholder="Location" name="place">
-                        <button type="submit" class="btn">Search</button>
-                    </div>
+              <form class="navbar-form navbar-left mag-left-50" role="search" onsubmit="return onSearch()" name="search_form">
 
-                    <div id="choose_input_type">
-                        <input type="radio" class="radioinput" name="type" id="restaurant" value="r" checked>
-                        <label for="restaurant" class="label">Restaurant</label>
-                        <input type="radio" class="radioinput" name="type" id="food" value="m">
-                        <label for="food" class="label" style="margin-right: 50px;">Food</label>
-                    </div>
+                <div class="form-group row container-fluid">
+                    <div class="col-lg-6">
+                      <div class="input-group">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Find<span class="caret"></span></button>
+                            <ul class="dropdown-menu pac-container">
+                              <li><a href="#" onClick="chooseType(1);">Restaurant</a></li>
+                              <li><a href="#" onClick="chooseType(0)">Food</a></li>
+                            </ul>
+                          </div><!-- /btn-group -->
+                      <input type="text" class="form-control" id="find-input" placeholder="Food, Restaurant">
+                      </div>
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                      <div class="input-group">
+                      <span class="input-group-addon">Place</span>
+                      <input type="text" class="form-control" id="place-input" placeholder="Location" name="place">
+                      </div>
+                    </div><!-- /.col-lg-6 -->
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
 
-                    {% csrf_token %}
-                </form>
+                <input type="hidden" value="r" id="query-type">
+                {% csrf_token %}
+              </form>
 
-                <ul class="nav navbar-nav navbar-right ng-scop" ng-controller="user_ctrl" id="header_login">
-                    <li class="divider-vertical hidden-xs"></li>
-
-                    {% if is_login %}
-                    <li>{{ user.first_name }}</li>
-                    <li>{{ user.last_name }}</li>
-                    {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'register' %}">Signup</a></li>
-                    {% endif %}
-                </ul>
-            </div>
+              <ul class="nav navbar-nav navbar-right" id="header_login">
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Signup</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
         </nav>
-        </header>
 
         <div id="wrap-all">
             <div id="main" class="inner">

@@ -10,9 +10,21 @@ function getURL(theUrl, extraParameters) {
     return(theUrl + seperator + extraParametersEncoded);
 }
 
+function chooseType(type) {
+	var typeInput = $('#find-input');
+	var typeTag = $('#query-type');
+	if (type == 0) { // food type
+		typeInput.attr("placeholder", "Food");
+		typeTag.val('m');
+	} else { // restaurant type
+		typeInput.attr("placeholder", "Restaurant");
+		typeTag.val('r');
+	}
+}
+
 function onSearch() {
 	var q = $('#find-input').val();
-	var type = $('input:radio[name=type]:checked').val();
+	var type = $('#query-type').val();
 	var address = $('#place-input').val();
 	var defaultSort = 'b';
 	var defaultDist = 2;
