@@ -5,7 +5,7 @@ import re
 
 
 class RegisterForm(forms.Form):
-    email = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50, label='Email Address')
     fname = forms.CharField(max_length=200, label='First Name')
     lname = forms.CharField(max_length=200, label='Last Name')
     password1 = forms.CharField(max_length=200, label='Password', widget=forms.PasswordInput())
@@ -35,9 +35,9 @@ class RegisterForm(forms.Form):
 
 
 class RestaurantForm(forms.Form):
-    name = forms.CharField(max_length=256)
-    introduction = forms.CharField(max_length=1000)
-    address = forms.CharField(max_length=256)
+    name = forms.CharField(max_length=256, label='Restaurant Name')
+    introduction = forms.CharField(max_length=1000, label='Restaurant Introduction')
+    address = forms.CharField(max_length=256, label='Restaurant Address')
     longitude = forms.FloatField(widget=forms.HiddenInput)
     latitude = forms.FloatField(widget=forms.HiddenInput)
     added_recipes = forms.CharField(required=False, widget=forms.HiddenInput)
@@ -62,7 +62,9 @@ class RestaurantForm(forms.Form):
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        exclude = ['uploader']
+        exclude = ['restaurant', 'uploader']
+        widgets = {'picture': forms.FileInput}
+
 
 
 

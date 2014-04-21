@@ -24,7 +24,7 @@ class Restaurant(models.Model):
 class Recipe(models.Model):
     name = models.CharField(max_length=256)
     picture = models.ImageField(upload_to='recipe-photos')
-    restaurant = models.ForeignKey(Restaurant, null=True, blank=True)
+    restaurant = models.ForeignKey(Restaurant, null=True)
     uploader = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -43,7 +43,7 @@ class Review(models.Model):
     reviewer = models.ForeignKey(User)
     restaurant = models.ForeignKey(Restaurant)
     content = models.CharField(max_length=3000)
-    rating = models.IntegerField()
+    rating = models.IntegerField(choices=((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5')), default=None)
     create_time = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):

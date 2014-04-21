@@ -223,7 +223,7 @@ def upload_recipe(request):
     if not request.user.is_authenticated() or request.user.userprofile.is_customer or request.method == 'GET':
         raise Http404
 
-    new_recipe = Recipe(uploader=request.user)
+    new_recipe = Recipe(uploader=request.user, restaurant=None)
     form = RecipeForm(request.POST, request.FILES, instance=new_recipe)
     if not form.is_valid():
         raise Http404
