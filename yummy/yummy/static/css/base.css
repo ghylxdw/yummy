@@ -6,6 +6,12 @@ body {
 	z-index: 1200;
 }
 
+.map-container {
+    border-color: dodgerblue;
+    height: 300px;
+    width: 500px;
+}
+
 .mag-left-50 {
 	margin-left: 50px;
 }
