@@ -21,7 +21,7 @@
     <tr>
         <td>
             <h2>{{ restaurant.name }}</h2> 
-            <div id="map-canvas"></div>
+            <div id="map-canvas" class="map-container"></div>
         </td>
         <td>
             <h4>Introduction</h4>
@@ -42,8 +42,16 @@
             {% endif %}
         </td>
     </tr>
+    <tr>
+        <td>
+            <div id="slidewindow">
+                {% for recipe in recipes %}
+                <img src="{{ recipe.picture }}" style="" 
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
     </table>
-
 </div>
 
 <div class="inner-wrap">
