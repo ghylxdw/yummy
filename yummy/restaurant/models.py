@@ -47,4 +47,4 @@ class Review(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return self.reviewer + ' ' + self.content + ' ' + self.restaurant
+        return self.content

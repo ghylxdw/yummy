@@ -8,8 +8,8 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ['content', 'rating']
         widgets = {'rating': forms.RadioSelect()}
-        labels = {'content': _('Write Review'),}
-        help_texts = {'content': _('Please write your reviews for this restaurant.'),}
+        labels = {'content': _('Write Review')}
+        help_texts = {'content': _('Please write your reviews for this restaurant.')}
 
     def clean_rating(self):
         rating = self.cleaned_data['rating']

@@ -60,7 +60,7 @@
                    <div class="col-lg-6">
                       <div class="input-group">
                       <span class="input-group-addon">Place</span>
-                      <input type="text" class="form-control" id="place-input" placeholder="Location" name="place">
+                      <input type="text" class="form-control" id="place-input" value="{{ address }}" placeholder="Location" name="place">
                       </div>
                     </div><!-- /.col-lg-6 -->
                 </div>
@@ -73,8 +73,11 @@
 
               <ul class="nav navbar-nav navbar-right" id="header_login">
                 {% if user.is_authenticated %}
-                    {{ user }}
-                <li>{{ user.first_name }} {{ user.last_name}}</li>
+                    {% if not user.userprofile.is_customer %}
+                    <li><a href="{% url 'my_restaurants' %}">My Restaurants</a></li>
+                    {% endif %}
+                <li><a href="{% url 'my_reviews' %}">My Reviews</a></li>
+                <li><a>{{ user.first_name }} {{ user.last_name}}</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>

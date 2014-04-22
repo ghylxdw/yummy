@@ -1,0 +1,25 @@
+h1 {
+    padding-top: 20px;
+    margin-left:5%;
+    padding-bottom: 15px;
+}
+
+h4 {
+    color: red;
+}
+
+.top-border {
+	border-top: solid;
+	border-top-color: dodgerblue;
+	width: 90%;
+	margin-top: 20px;
+	margin-left: 5%;
+	margin-right: 5%;
+    padding-top: 10px;
+}
+
+.top-border td {
+	padding-left: 50px;
+	text-align: top;
+	width: 200px;
+}

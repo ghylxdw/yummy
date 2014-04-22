@@ -1,0 +1,13 @@
+.bot-border {
+	border-bottom: solid;
+	border-bottom-color: dodgerblue;
+    width: 90%;
+	margin-top: 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.center-form {
+    margin-left: 20%;
+    margin-right: 20%;
+}

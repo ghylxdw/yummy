@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/restaurant.css" %}">
+    <script type="text/javascript" src="{% static "js/restaurant.js" %}"></script>
+{% endblock %}
+
+{% block main-content %}
+
+<div class="center-form">
+
+    {% if errors %}
+    <p class="alert alert-danger">
+        {{ errors }}
+    </p>
+    {% endif %}
+
+    {% for error in form.errors %}
+    <p class="alert alert-danger">
+        {{ error }}
+    </p>
+    {% endfor %}
+
+    <h2>Please write your reviews below</h2>
+
+    <form action="{% url 'write_review' restaurant_id %}" method="POST">
+        <textarea rows="8" cols="100" id="{{ form.content.auto_id }}" name="{{ form.content.html_name }}"></textarea><br>
+
+        <h4>put your over all evaluation here</h4>
+        <label> low </label>
+
+        {% for value, text in form.rating.field.choices %}
+            <label class="radio-inline" for="{{ value.auto_id }}">
+            <input type="radio" id="{{ value.auto_id }}" name="{{ form.rating.html_name }}" value="{{ value }}"> {{ text }}
+        </label>
+        {% endfor %}
+
+        <label> high </label><br>
+
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <a class="btn btn-warning" href="{% url 'restaurant_home' restaurant_id %}" >
+            Cancel Review
+        </a>
+
+        {% csrf_token %}
+    </form>
+
+</div>
+
+{% endblock %}

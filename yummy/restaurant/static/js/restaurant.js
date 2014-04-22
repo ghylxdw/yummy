@@ -1,3 +1,23 @@
+function loadMap(center) {
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 12,
+        center: center,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+
+}
+
+$(document).ready( function() {
+    var center = new google.maps.LatLng($("#lat-hid").val(), $("#lng-hid").val());
+    loadMap(center);
+});
+
 function updateReviews() {
     console.log("update reviews called");
 

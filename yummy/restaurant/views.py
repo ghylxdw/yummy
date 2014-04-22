@@ -103,7 +103,7 @@ def write_review(request, restaurant_id):
     restaurant.review_number += 1
     restaurant.save()
 
-    return redirect(reverse('restaurant_home'), kwargs={'restaurant_id': restaurant_id})
+    return redirect(reverse('restaurant_home', kwargs={'restaurant_id': restaurant_id}))
 
 
 # Ajax to get reviews

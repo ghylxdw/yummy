@@ -1,14 +1,19 @@
 function loadMap(center, restaurants, zoom) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
-      zoom: zoom,
-      center: center,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom: zoom,
+        center: center,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
     var infowindow = new google.maps.InfoWindow();
 
     var marker, i;
+
+    marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
 
     for (i = 0; i < restaurants.length; i++) {
         var location = restaurants[i].fields.location.split(" ");
@@ -27,7 +32,6 @@ function loadMap(center, restaurants, zoom) {
         }
         })(marker, i));
     }
-
 }
 
 function sendAjax() {
@@ -43,7 +47,19 @@ function sendAjax() {
     };
 
     var center = new google.maps.LatLng(parameters.latitude, parameters.longitude);
-    var zoom = 16 - Math.floor(parameters.distance/5);
+    var zoom;
+
+    switch(parameters.distance) {
+        case "2":
+            zoom = 15;
+            break;
+        case "5":
+            zoom = 12;
+            break;
+        case "10":
+            zoom = 11;
+            break;
+    }
 
 	$.ajax ({
 		datatype: "json",
@@ -73,14 +89,13 @@ function drawLi(restaurant) {
     var div2 = $("<div class=\"col-md-5\" />");
     var div3 = $("<div class=\"col-md-3\" />");
 
-    div1.append($("<h4>" + restaurant.fields.name + "</h4>"));
-    div1.append($("<img src=\"\" width=\"160\" height=\"90\" alt=\"restaurant_picture\">"));
+    div1.append($("<h4><a href=\"/restaurant/" + restaurant.pk + "\">" + restaurant.fields.name +"</a></h4>"));
 
     div2.append($("<h4>Rating:" + restaurant.fields.avg_rating + " Reviews: " + restaurant.fields.review_number + "</h4>"));
     div2.append($("<h4>Introduction</h4>"));
     div2.append($("<p>" + restaurant.fields.introduction + "</p>"));
 
-    div3.append($("<address>" + restaurant.fields.location + "</address>"));
+    div3.append($("<address><strong>" + restaurant.fields.address + "</strong></address>"));
 
     li.append(div1);
     li.append(div2);

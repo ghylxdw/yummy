@@ -7,9 +7,12 @@
 
 {% block main-content %}
 <div class="inner-wrap" style="margin-left: 20%; margin-right: 20%;">
+
+    {% if errors %}
     <p class="alert alert-danger">
         {{ errors }}
     </p>
+    {% endif %}
 
     {% for error in form.non_field_errors %}
     <p class="alert alert-danger">
