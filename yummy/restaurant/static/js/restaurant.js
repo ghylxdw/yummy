@@ -23,7 +23,7 @@ function updateReviews() {
 
     $.ajax ({
 		datatype: "json",
-	    url: "/get-review",
+	    url: "/get_review",
 	    data: {'restaurant_id' : $("#restID-hid").val()},
 	    success: function(review_list) {
 	    	$("#review-list").empty();

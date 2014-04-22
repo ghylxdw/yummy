@@ -151,7 +151,7 @@ def add_restaurant(request):
     added_recipes = form.cleaned_data['added_recipes']
     relate_added_recipes_helper(new_restaurant, added_recipes)
 
-    return redirect(reverse('restaurant_home'), kwargs={'restaurant_id': new_restaurant.id})
+    return redirect(reverse('restaurant_home', kwargs={'restaurant_id': new_restaurant.id}))
 
 
 @login_required
@@ -202,7 +202,7 @@ def edit_restaurant(request, restaurant_id):
         added_recipes = form.cleaned_data['added_recipes']
         relate_added_recipes_helper(restaurant, added_recipes)
 
-        return redirect(reverse('restaurant_home'), kwargs={'restaurant_id': restaurant.id})
+        return redirect(reverse('restaurant_home', kwargs={'restaurant_id': restaurant.id}))
 
 
 @transaction.atomic
@@ -223,7 +223,7 @@ def upload_recipe(request):
     if not request.user.is_authenticated() or request.user.userprofile.is_customer or request.method == 'GET':
         raise Http404
 
-    new_recipe = Recipe(uploader=request.user, restaurant=None)
+    new_recipe = Recipe(uploader=request.user)
     form = RecipeForm(request.POST, request.FILES, instance=new_recipe)
     if not form.is_valid():
         raise Http404
