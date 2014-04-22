@@ -8,13 +8,15 @@
 
 {% block main-content %}
 
-<div class="inner-wrap form-border" style="margin-left: 20%; margin-right: 20%;">
+<div class="inner-wrap" style="margin-left: 35%; margin-right: 20%; padding-top: 5%;">
 
+    {% if errors %}
     <p class="alert alert-danger">
         {{ errors }}
     </p>
+    {% endif %}
 
-    {% for error in form.non_field_errors %}
+    {% for error in form.errors %}
         <p class="alert alert-danger">
             {{ error }}
         </p>
@@ -22,7 +24,7 @@
 
     <h2 class="form-sign-heading">Add a new restaurant</h2>
 
-    <form class="form-center" method="post" action="{% url 'add_restaurant' %} ">
+    <form method="post" action="{% url 'add_restaurant' %}" onsubmit="return getLatLng();">
         <table>
         {% for field in form.visible_fields %}
             <tr>
@@ -36,7 +38,7 @@
 
         <table id="restaurant-form">
             <tr>
-                <td><input class="form-control" placeholder="{{  }}"></td>
+{#                <td><input class="form-control" placeholder="{{  }}"></td>#}
             </tr>
         </table>
 
@@ -46,11 +48,14 @@
         {% endfor %}
         
         <div style="margin-right:50px; margin-top:20px;">
-        <input type="submit" value="Add" class="btn btn-primary col-lg-2" style="height:30px;" />
-        <a class="btn btn-primary col-lg-2" style="height:30px;" href="{% url 'my_restaurants' %}">Cancel</a>
+        <input type="submit" value="Add" class="btn btn-primary col-lg-2" style="height:40px; width:100px;" />
+        <a class="btn btn-primary col-lg-2" style="height:40px; width:100px;" href="{% url 'my_restaurants' %}">Cancel</a>
         </div>
+
         {% csrf_token %}
     </form>
-</div>
 
+    <div id="map-canvas" class="map-container"></div>
+
+</div>
 {% endblock %}

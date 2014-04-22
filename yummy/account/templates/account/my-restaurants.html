@@ -7,14 +7,20 @@
 {% endblock %}
 
 {% block main-content %}
+
+    {% if errors %}
 	<p class="alert alert-danger">
     	{{ errors }}
     </p>
+    {% endif %}
 
-	<h2>Welcome to your restaurants, {{ user.first_name }} {{ user.last_name }}</h2>
+    <div class="bot-border">
+        <h2>Welcome to your restaurants, {{ user.first_name }} {{ user.last_name }}</h2>
+        <a class="btn btn-primary" style="float: right; margin-right: 20px; margin-top: 10px;" href="{% url 'add_restaurant' %}">Add Restaurant</a>
+    </div>
 
-	<a class="btn" href="{% url 'add_restaurant' %}">Add Restaurant</a>
 	{% for restaurant in restaurants %}
 		{{ restaurant }}
 	{% endfor %}
+
 {% endblock %}

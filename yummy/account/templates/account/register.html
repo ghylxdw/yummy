@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block main-content %}
-<div class="inner-wrap" style="margin-left: 20%; margin-right: 20%;">
+<div class="inner-wrap" style="padding-top: 5%; margin-left: 35%; margin-right: 25%;">
 
     {% if errors %}
     <p class="alert alert-danger">
@@ -22,7 +22,7 @@
     
     <h2 class="form-sign-heading">Register for an new account</h2>
 
-    <form method="post" action="{% url 'register' %}">
+    <form class="form-center" method="post" action="{% url 'register' %}">
         <table>
         {% for field in form.visible_fields %}
             {%  if field.html_name == "user_type" %}

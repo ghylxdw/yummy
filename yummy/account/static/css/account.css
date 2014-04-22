@@ -1,12 +1,18 @@
-.form-border {
-	border-style: double;
-	border-width: 3px;
+h2 {
+    width: 500px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
-.form-center {
-	padding-left: 10%;
-	padding-right: 10%;
+.bot-border {
+	border-bottom: solid;
+	border-bottom-color: dodgerblue;
+    width: 90%;
+	margin-top: 20px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
+
 .star-rating s {
     color: red;
     font-size: 50px;
@@ -17,4 +23,12 @@
 
 .star-rating s:before {
     content: "\2605";
+}
+
+.map-container {
+    position: relative;
+    margin-top: 100px;
+    border-color: dodgerblue;
+    height: 300px;
+    width: 500px;
 }

@@ -8,9 +8,11 @@
 {% block main-content %}
 	<h1 align="center" style="color:blue; font-size: 50px">Email Confirmed</h1>
 
+    {% if errors %}
 	<p class="alert alert-danger">
     	{{ errors }}
     </p>
+    {% endif %}
 
 	<div style="font-size: 20px; width=500px" align="center" >
 	<a href="mailto:{{ email }}">{{ email }}</a> has been confirmed. 

@@ -62,10 +62,9 @@ function drawLi(restaurant) {
     var div2 = $("<div class=\"col-md-5\" />");
     var div3 = $("<div class=\"col-md-3\" />");
 
-    div1.append($("<h4>" + restaurant.fields.name + "</h4>"));
-    div1.append($("<img src=\"\" width=\"160\" height=\"90\" alt=\"restaurant_picture\">"));
+    div1.append($("<h4><a href=\"/restaurant/" + restaurant.pk + "\">" + restaurant.fields.name +"</a></h4>"));
 
-    div2.append($("<h4>Rating:" + restaurant.fields.avg_rating + " Reviews: " + restaurant.fields.review_number + "</h4>"));
+    div2.append($("<h4>Rating:" + restaurant.fields.avg_rating + restaurant.fields.review_number + " Reviews </h4>"));
     div2.append($("<h4>Introduction</h4>"));
     div2.append($("<p>" + restaurant.fields.introduction + "</p>"));
 

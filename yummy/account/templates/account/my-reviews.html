@@ -3,20 +3,22 @@
 {% block head %}
     {% load static %}
     <link rel="stylesheet" href="{% static "css/account.css" %}">
-    <script type="text/javascript" src="{% static "js/account.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/review.js" %}"></script>
 {% endblock %}
 
 {% block main-content %}
-	<h2>Welcome to your reviews, {{ user.firstname }} {{ user.lastname }}</h2>
 
-	<ul>
+    <h2 class="bot-border"> Welcome to your reviews, {{ user.first_name }} {{ user.last_name }}</h2>
+
+	<ul class="bot-border list-unstyled">
 		{% for review in reviews %}
-		<li>	
+		<li>
 			<h4>{{ review.restaurant.name }}</h4><p>{{ review.create_time }}</p>
 			<div class="star-rating"></div>
 			<p>{{ review.content }}</p>
 		</li>
 		{% endfor %}
-	</ul>
+    </ul>
+
 
 {% endblock %}

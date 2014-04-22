@@ -149,7 +149,8 @@ def add_restaurant(request):
                                 address=form.cleaned_data['address'], owner=request.user, location=location)
     new_restaurant.save()
     added_recipes = form.cleaned_data['added_recipes']
-    relate_added_recipes_helper(new_restaurant, added_recipes)
+    if added_recipes:
+        relate_added_recipes_helper(new_restaurant, added_recipes)
 
     return redirect(reverse('restaurant_home', kwargs={'restaurant_id': new_restaurant.id}))
 
@@ -200,7 +201,8 @@ def edit_restaurant(request, restaurant_id):
 
         # relate the uploaded recipes to the restaurant
         added_recipes = form.cleaned_data['added_recipes']
-        relate_added_recipes_helper(restaurant, added_recipes)
+        if added_recipes:
+            relate_added_recipes_helper(restaurant, added_recipes)
 
         return redirect(reverse('restaurant_home', kwargs={'restaurant_id': restaurant.id}))
 

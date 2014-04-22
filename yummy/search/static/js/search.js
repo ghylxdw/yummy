@@ -1,6 +1,6 @@
 function loadMap(center, restaurants, zoom) {
 
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    var map = new google.maps.Map(document.getElementById("map-canvas"), {
         zoom: zoom,
         center: center,
         mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -51,7 +51,7 @@ function sendAjax() {
 
     switch(parameters.distance) {
         case "2":
-            zoom = 15;
+            zoom = 13;
             break;
         case "5":
             zoom = 12;
