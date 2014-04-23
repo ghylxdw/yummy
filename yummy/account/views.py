@@ -223,11 +223,13 @@ def relate_added_recipes_helper(restaurant, added_recipes):
 @transaction.atomic
 def upload_recipe(request):
     if not request.user.is_authenticated() or request.user.userprofile.is_customer or request.method == 'GET':
+        print 'other thing fail'
         raise Http404
 
     new_recipe = Recipe(uploader=request.user)
     form = RecipeForm(request.POST, request.FILES, instance=new_recipe)
     if not form.is_valid():
+        print 'form invalid'
         raise Http404
 
     new_recipe = form.save()

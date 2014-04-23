@@ -64,7 +64,19 @@ function getLatLng() {
 }
 
 function postRecipe() {
+    var fd = new FormData(document.getElementById("recipe_upload"));
+    $.ajax({
+        url: "/account/upload-recipe",
+        type: "POST",
+        data: fd,
+        processData: false,  // tell jQuery not to process the data
+        contentType: false,   // tell jQuery not to set contentType
+        success: function( response ) {
+            alert(response.id);
+        }
+    });
 
+    return false;
 }
 
 function autocomplete() {
