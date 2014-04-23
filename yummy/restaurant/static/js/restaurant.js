@@ -34,8 +34,9 @@ $(document).ready( function() {
 //                }
 //            } else {
 //                var tr = $("<tr class=\"bot-border\">");
-//                var td = $("<td style=\"color: red;\">");
 //                $("#review-table").append(tr);
+//
+//                var td = $("<td style=\"color: red;\">");
 //                tr.append(td);
 //                td.append($("<h4>No reviews now! Please write reviews!</h4>"));
 //            }

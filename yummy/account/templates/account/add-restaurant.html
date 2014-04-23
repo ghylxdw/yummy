@@ -48,26 +48,18 @@
         {% csrf_token %}
     </form>
 
-{#    <table id="recipe-form">#}
-{#        <tr>#}
-{#            <td><input class="form-control" placeholder="Recipe Name"></td>#}
-{#            <td><input class="pull-left" type="file" id="picture"></td>#}
-{#            <td><a class="btn btn-primary" onclick="postRecipe()">Post</a></td>#}
-{#        </tr>#}
-{#    </table>#}
+    <table class="table" id="recipe-table">
+    </table>
 
     <form enctype="multipart/form-data" onsubmit="return postRecipe()" id="recipe_upload">
-        <label>Your email address:</label>
-        <input class="form-control" name="name" placeholder="Recipe Name" required/><br />
-        <label>Custom picture:</label>
-        <input type="file" name="picture" required />
-        <input type="submit" value="Post" />
+        <div style="display: inline-flex">
+          <input class="form-control" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
+          <label>Upload food picture:</label>
+          <input type="file" name="picture" required />
+          <input class="btn btn-primary" style="height:40px; width:100px;" type="submit" value="Post" />
+        </div>
         {% csrf_token %}
     </form>
-
-
-
-
 
     <div id="map-canvas" class="map-container"></div>
 

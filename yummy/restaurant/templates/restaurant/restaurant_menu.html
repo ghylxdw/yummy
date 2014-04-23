@@ -8,20 +8,23 @@
 
 {% block main-content %}
 
-<h2>Recipe in restaurant {{ restaurant }}</h2>
+<div class="inner-wrap center-table">
+    <h2>Recipe in restaurant {{ restaurant }}</h2>
 
-{% if error in errors %}
-    <p>{{ error }}</p>
-{% endif %}
+    {% if error in errors %}
+        <p class="alert alert-danger">{{ error }}</p>
+    {% endif %}
 
-<div class="inner-wrap">
     <ul class="list-unstyled" id="review-list">
         {% for recipe in recipe_list %}
-        <li class="row list-space top-border">
-            {{ recipe.name }}
+        <li class="list-space top-border" style="display:inline-flex;">
+            <h4>{{ recipe.name }}</h4>
+            <img src="{{ recipe.picture }}" alt="{{ recipe.id }}">
         </li>
         {% endfor %}
     </ul>
+
+    <a class="btn btn-primary" href="{% url 'restaurant_home' restaurant_id %}">Back</a>
 </div>  
 
 {% endblock %}

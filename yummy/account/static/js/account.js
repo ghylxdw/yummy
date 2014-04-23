@@ -73,10 +73,36 @@ function postRecipe() {
         contentType: false,   // tell jQuery not to set contentType
         success: function( response ) {
             alert(response.id);
+            
+            var ids = $("#").val();
+
+
+            var tr = $("<tr id=\"recipe" + response.id + "\">");
+            $("#recipe-table").append(tr);
+
+            var td = $("<td style=\"display: inline-flex;\">");
+            tr.append(td);
+
+            td.append($("<h4>" + response.name +"</h4>"));
+            td.append($("<img src=\"restaurant/recipe-image/" + response.id + "\">"));
+            td.append($("<a onclick=\"deleteRecipe(" + response.id + ")\">delete</a>"));
         }
     });
 
     return false;
+}
+
+function deleteRecipe(id) {
+
+    $("#recipe" + id).remove();
+
+    alert("success remove " + id);
+
+    $.ajax ({
+        url: "/account/delete-recipe",
+        type: "POST",
+        data: {'id' : id},
+    });
 }
 
 function autocomplete() {

@@ -4,6 +4,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static "css/restaurant.css" %}">
     <script type="text/javascript" src="{% static "js/restaurant.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/slideshow.js" %}"></script>
 {% endblock %}
 
 {% block main-content %}
@@ -13,7 +14,7 @@
 <input type="hidden" value="{{ restaurant.location.y }}"  id="lat-hid">
 
 {% if error in errors %}
-    <p>{{ error }}</p>
+    <p class="alert alert-danger">{{ error }}</p>
 {% endif %}
 
 <div class="inner-wrap">
@@ -43,16 +44,14 @@
                 {% endif %}
             </td>
         </tr>
-{#        <tr class="top-border">#}
-{#            <td>#}
-{#                <div id="slidewindow">#}
-{#                    {% for recipe in recipes %}#}
-{#                    <img src="{{ recipe.picture }}" style="">#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{#            </td>#}
-{#        </tr>#}
     </table>
+
+    <div id="slideShowImages" class="center-table">
+        {% for recipe in recipes %}
+            <img src="{{ recipe.picture }}" alt="Slide {{ recipe.id }}" />
+        {% endfor %}
+    </div>  
+    <a class="btn btn-primary" href="{% url 'restaurant_menu' restaurant.id %}" id="slideShowButton">Show whole menu</a>
 </div>
 
 <div class="inner-wrap">
