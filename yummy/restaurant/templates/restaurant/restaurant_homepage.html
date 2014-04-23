@@ -17,51 +17,74 @@
 {% endif %}
 
 <div class="inner-wrap">
-    <table class="table bot-border">
-    <tr>
-        <td>
-            <h2>{{ restaurant.name }}</h2> 
-            <div id="map-canvas" class="map-container"></div>
-        </td>
-        <td>
-            <h4>Introduction</h4>
-            <p>
-                {{ restaurant.introduction }}
-            </p>
-            <h4> Address </h4>
-            <address>
-                <strong>{{ restaurant.address }}</strong>
-            </address>
-        </td>
-        <td>
-            {% if user.is_authenticated %}
-                {% if not user.userprofile.is_customer and is_owner %}
-                <a class="btn btn-primary" href="{% url 'edit_restaurant' restaurant.id %}">Edit Restaurant</a>
+    <table class="table center-table">
+        <tr>
+            <td>
+                <h2>{{ restaurant.name }}</h2>
+                <div id="map-canvas" class="map-container"></div>
+            </td>
+            <td>
+                <h4>Introduction</h4>
+                <p>
+                    {{ restaurant.introduction }}
+                </p>
+                <h4> Address </h4>
+                <address>
+                    <strong>{{ restaurant.address }}</strong>
+                </address>
+            </td>
+            <td>
+                {% if user.is_authenticated %}
+                    {% if not user.userprofile.is_customer and is_owner %}
+                    <a class="btn btn-primary nice-btn" href="{% url 'edit_restaurant' restaurant.id %}">Edit Restaurant</a>
+                    {% endif %}
+                    <br>
+                    <a class="btn btn-primary nice-btn" href="{% url 'write_review' restaurant.id %}">Write Review</a>
                 {% endif %}
-                <a class="btn btn-primary" href="{% url 'write_review' restaurant.id %}">Write Review</a>
-            {% endif %}
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div id="slidewindow">
-                {% for recipe in recipes %}
-                <img src="{{ recipe.picture }}" style="" 
-                {% endfor %}
-            </div>
-        </td>
-    </tr>
+            </td>
+        </tr>
+{#        <tr class="top-border">#}
+{#            <td>#}
+{#                <div id="slidewindow">#}
+{#                    {% for recipe in recipes %}#}
+{#                    <img src="{{ recipe.picture }}" style="">#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </td>#}
+{#        </tr>#}
     </table>
 </div>
 
 <div class="inner-wrap">
-    <ul class="list-unstyled" id="review-list">
-        {% for review in reviews %}
-        <li class="list-space bot-border">
-            {{ review.content }}
-        </li>
-        {% endfor %}
-    </ul>
+    <h2 class="bot-border center-table"> Reviews </h2>
+
+	<table class="center-table" id="review-table">
+		{% for review in reviews %}
+		<tr class="bot-border">
+            <td class="col-lg-3">
+            <h4>{{ review.reviewer.first_name }} {{ review.reviewer.last_name }}</h4>
+            <p>{{ review.create_time }}</p>
+            </td>
+            <td class="col-lg-3">
+                {% if review.rating <= 1 %}
+                <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 2 %}
+                    <img src="{% static "images/rating2.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 3 %}
+                    <img src="{% static "images/rating3.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 4 %}
+                    <img src="{% static "images/rating4.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 5 %}
+                    <img src="{% static "images/rating5.png" %}" height="42px" width="200px">
+                {% endif %}
+            </td>
+            <td class="col-lg-3">
+                <h4>Comment</h4>
+                <p><strong>{{ review.content }}</strong></p>
+            </td>
+		</tr>
+		{% endfor %}
+    </table>
 </div>
 
 {% endblock %}

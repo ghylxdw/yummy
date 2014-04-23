@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('#id_address').bind('input', getLatLng());
 	getLocation();
 });
 
@@ -62,6 +61,10 @@ function getLatLng() {
     });
 
     return false;
+}
+
+function postRecipe() {
+
 }
 
 function autocomplete() {

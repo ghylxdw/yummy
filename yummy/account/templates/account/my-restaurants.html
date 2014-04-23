@@ -14,13 +14,40 @@
     </p>
     {% endif %}
 
-    <div class="bot-border">
-        <h2>Welcome to your restaurants, {{ user.first_name }} {{ user.last_name }}</h2>
-        <a class="btn btn-primary" style="float: right; margin-right: 20px; margin-top: 10px;" href="{% url 'add_restaurant' %}">Add Restaurant</a>
+    <div class="center-form">
+        <h2 class="col-lg-8">Welcome to your restaurants, {{ user.first_name }} {{ user.last_name }}</h2>
+        <a class="btn btn-primary col-lg-2" style="margin-right: 20px; margin-top: 30px;" href="{% url 'add_restaurant' %}">Add Restaurant</a>
     </div>
 
-	{% for restaurant in restaurants %}
-		{{ restaurant }}
-	{% endfor %}
+    <table class="center-form" style="padding-top: 20px; border-top: solid; border-top-color: dodgerblue;">
+		{% for restaurant in restaurants %}
+		<tr class="bot-border">
+            <td class="col-lg-3">
+            <h4>{{ restaurant.name }}</h4>
+            <p>{{ restaurant.address}}</p>
+            </td>
+            <td class="col-lg-1">
+                {% if restaurant.avg_rating  <= 1 %}
+                <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
+                {% elif restaurant.avg_rating <= 2 %}
+                    <img src="{% static "images/rating2.png" %}" height="42px" width="200px">
+                {% elif restaurant.avg_rating <= 3 %}
+                    <img src="{% static "images/rating3.png" %}" height="42px" width="200px">
+                {% elif restaurant.avg_rating <= 4 %}
+                    <img src="{% static "images/rating4.png" %}" height="42px" width="200px">
+                {% elif restaurant.avg_rating <= 5 %}
+                    <img src="{% static "images/rating5.png" %}" height="42px" width="200px">
+                {% endif %}
+            </td>
+            <td class="col-lg-1">
+                <h4>rating: {{ restaurant.avg_rating }} <br> {{ restaurant.review_number }} reviews</h4>
+            </td>
+            <td class="col-lg-3">
+                <h4>Introduction</h4>
+                <p><strong>{{ restaurant.introduction }}</strong></p>
+            </td>
+		</tr>
+		{% endfor %}
+    </table>
 
 {% endblock %}

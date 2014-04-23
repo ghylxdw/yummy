@@ -8,17 +8,34 @@
 
 {% block main-content %}
 
-    <h2 class="bot-border"> Welcome to your reviews, {{ user.first_name }} {{ user.last_name }}</h2>
+    <h2 class="bot-border center-form"> Welcome to your reviews, {{ user.first_name }} {{ user.last_name }}</h2>
 
-	<ul class="bot-border list-unstyled">
+	<table class="center-form">
 		{% for review in reviews %}
-		<li>
-			<h4>{{ review.restaurant.name }}</h4><p>{{ review.create_time }}</p>
-			<div class="star-rating"></div>
-			<p>{{ review.content }}</p>
-		</li>
+		<tr class="bot-border">
+            <td class="col-lg-3">
+            <h4>{{ review.restaurant.name }}</h4>
+            <p>{{ review.create_time }}</p>
+            </td>
+            <td class="col-lg-3">
+                {% if review.rating <= 1 %}
+                <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 2 %}
+                    <img src="{% static "images/rating2.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 3 %}
+                    <img src="{% static "images/rating3.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 4 %}
+                    <img src="{% static "images/rating4.png" %}" height="42px" width="200px">
+                {% elif review.rating <= 5 %}
+                    <img src="{% static "images/rating5.png" %}" height="42px" width="200px">
+                {% endif %}
+            </td>
+            <td class="col-lg-3">
+                <h4>Comment</h4>
+                <p><strong>{{ review.content }}</strong></p>
+            </td>
+		</tr>
 		{% endfor %}
-    </ul>
-
+    </table>
 
 {% endblock %}

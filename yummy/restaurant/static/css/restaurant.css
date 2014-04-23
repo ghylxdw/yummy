@@ -1,6 +1,14 @@
+.top-border {
+	border-top: solid;
+	border-top-color: dodgerblue;
+}
+
 .bot-border {
-	border-bottom: solid;
+    border-bottom: solid;
 	border-bottom-color: dodgerblue;
+}
+
+.center-table {
     width: 90%;
 	margin-top: 20px;
 	margin-left: 50px;
@@ -10,4 +18,10 @@
 .center-form {
     margin-left: 20%;
     margin-right: 20%;
+}
+
+.nice-btn {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
 }
