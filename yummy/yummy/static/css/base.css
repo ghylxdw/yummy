@@ -46,7 +46,7 @@ body {
 }
 
 #wrap-all {
-	position: fixed;
+	position: relative;
 	margin-top: 80px;
 	padding-left: 10%;
 	padding-right: 10%;

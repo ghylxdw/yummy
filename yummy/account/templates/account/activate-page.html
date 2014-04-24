@@ -6,17 +6,17 @@
 {% endblock %}
 
 {% block main-content %}
-	<h1 align="center" style="color:blue; font-size: 50px">Email Confirmed</h1>
-
     {% if errors %}
 	<p class="alert alert-danger">
     	{{ errors }}
     </p>
-    {% endif %}
+    {% else %}
+    <h1 align="center" style="color:blue; font-size: 50px">Email Confirmed</h1>
 
 	<div style="font-size: 20px; width=500px" align="center" >
 	<a href="mailto:{{ email }}">{{ email }}</a> has been confirmed. 
 	<p>Enjoy your tour to Yummy. Thank you.</p>
 	<a href="{% url 'login' %}">Please Log in...</a>
 	</div>
+    {% endif %}
 {% endblock %}
