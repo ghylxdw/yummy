@@ -3,7 +3,6 @@
 {% block head %}
     {% load static %}
     <link rel="stylesheet" href="{% static "css/account.css" %}">
-    <script type="text/javascript" src="{% static "js/review.js" %}"></script>
 {% endblock %}
 
 {% block main-content %}
@@ -14,12 +13,12 @@
 		{% for review in reviews %}
 		<tr class="bot-border">
             <td class="col-lg-3">
-            <h4>{{ review.restaurant.name }}</h4>
+            <h4><a href="{% url 'restaurant-home' review.restaurant_id %}">{{ review.restaurant.name }}</a></h4>
             <p>{{ review.create_time }}</p>
             </td>
             <td class="col-lg-3">
                 {% if review.rating <= 1 %}
-                <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
+                    <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
                 {% elif review.rating <= 2 %}
                     <img src="{% static "images/rating2.png" %}" height="42px" width="200px">
                 {% elif review.rating <= 3 %}
