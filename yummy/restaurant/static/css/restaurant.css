@@ -1,3 +1,7 @@
+h2 {
+    font-family: Monaco;
+}
+
 .top-border {
 	border-top: solid;
 	border-top-color: dodgerblue;
@@ -22,7 +26,7 @@
 
 .nice-btn {
     margin-top: 20px;
-    width: 100%;
+    width: 150px;
     height: 30px;
 }
 

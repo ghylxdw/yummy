@@ -4,73 +4,80 @@
     {% load static %}
     <link rel="stylesheet" href="{% static "css/account.css" %}">
     <script type="text/javascript" src="{% static "js/account.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery.cookie.js" %}"></script>
 {% endblock %}
 
 {% block main-content %}
 
-<div class="inner-wrap" style="margin-left: 35%; margin-right: 20%; padding-top: 5%;">
+<div class="inner-wrap" style="display: inline-flex; margin-left: 10%; padding-top: 20px;">
 
-    {% if errors %}
-    <p class="alert alert-danger">
-        {{ errors }}
-    </p>
-    {% endif %}
-
-    {% for error in form.errors %}
+    <div style="width: 400px;">
+        {% if errors %}
         <p class="alert alert-danger">
-            {{ error }}
+            {{ errors }}
         </p>
-    {% endfor %}
+        {% else %}
 
-    <h2 class="form-sign-heading">Add a new restaurant</h2>
+        {% if form.errors %}
+            <p class="alert alert-danger">The form is invalid</p>
+        {% endif %}
 
-    <form method="post" action="{% url 'add_restaurant' %}" onsubmit="return getLatLng();">
-        <table>
-        {% for field in form.visible_fields %}
-            <tr>
-                <td><input id="{{ field.auto_id }}" name="{{ field.html_name }}" type="{{ field.field.widget.input_type }}" class="form-control" style="width:300px" value="{{ field.value }}" placeholder="{{ field.label }}"></td>
-                {% if field.errors %}
-                <td style="color: red">{{ field.errors }}</td>
-                {% endif %}
-            </tr>
-        {% endfor %}
+        <h2 class="form-sign-heading">Edit restaurant</h2>
+
+        <form method="post" action="{% url 'edit_restaurant' restaurant_id %}" onsubmit="getLatLng(); return true;">
+            <table>
+            {% for field in form.visible_fields %}
+                <tr>
+                    <td><input id="{{ field.auto_id }}" name="{{ field.html_name }}" type="{{ field.field.widget.input_type }}" class="form-control" style="width:300px" value="{{ field.value }}" placeholder="{{ field.label }}"></td>
+                    {% if field.html_name == 'address' %}
+                    <td><a class="btn btn-primary" onclick="getLatLng()">Find</a></td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    {% if field.errors %}
+                    <td style="color: red">{{ field.errors }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </table>
+
+            {% for field in form.hidden_fields %}
+              {{field}}
+            {% endfor %}
+
+            <div style="margin-right:50px; margin-top:20px;">
+            <input type="submit" value="Done" class="btn btn-primary col-lg-2" style="height:40px; width:100px;" />
+            <a class="btn btn-primary col-lg-2" style="margin-left:20px; height:40px; width:100px;" href="{% url 'my_restaurants' %}" onclick="onCancel()">Cancel</a>
+            </div>
+
+            {% csrf_token %}
+        </form>
+
+        <table class="table" id="recipe-table">
+            {% for recipe in recipes %}
+                <tr id="recipe{{ recipe.id }}">
+                    <td style="display: inline-flex;">
+                        <h4>{{ recipe.name }}</h4>
+                        <img src="{% url 'get_recipe_image' recipe.id %}" height="100px" width="200px">
+                        <a onclick="deleteRecipe({{ recipe.id }})">delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
         </table>
 
-        {% for field in form.hidden_fields %}
-          {{field}}
-        {% endfor %}
-        
-        <div style="margin-right:50px; margin-top:20px;">
-        <input type="submit" value="Add" class="btn btn-primary col-lg-2" style="height:40px; width:100px;" />
-        <a class="btn btn-primary col-lg-2" style="height:40px; width:100px;" href="{% url 'my_restaurants' %}">Cancel</a>
-        </div>
+        <form enctype="multipart/form-data" onsubmit="return postRecipe()" id="recipe_upload">
+              <label>Upload recipe:</label>
+              <input class="form-control" style="width: 300px;" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
+              <input type="file" name="picture" required />
+              <input class="btn btn-primary" style="margin-top: 10px; height:30px; width:100px;" type="submit" value="Upload" />
+            {% csrf_token %}
+        </form>
 
-        {% csrf_token %}
-    </form>
+        {% endif %}
+    </div>
 
-    <table class="table" id="recipe-table">
-        {% for recipe in recipes %}
-            <tr id="recipe{{ recipe.id }}">
-                <td style="display: inline-flex;">
-                    <h4>{{ recipe.name }}</h4>
-                    <img src="{{ recipe.picture }}">
-                    <a onclick="deleteRecipe({{ recipe.id }})">delete</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-
-    <form enctype="multipart/form-data" onsubmit="return postRecipe()" id="recipe_upload">
-        <div style="display: inline-flex">
-          <input class="form-control" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
-          <label>Upload food picture:</label>
-          <input type="file" name="picture" required />
-          <input class="btn btn-primary" style="height:40px; width:100px;" type="submit" value="Post" />
-        </div>
-        {% csrf_token %}
-    </form>
-
-    <div id="map-canvas" class="map-container"></div>
+    <div id="map-canvas" class="map-container" style="margin-left: 30px;"></div>
 
 </div>
+
 {% endblock %}

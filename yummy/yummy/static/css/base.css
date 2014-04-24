@@ -46,7 +46,7 @@ body {
 }
 
 #wrap-all {
-	position: relative;
+	position: fixed;
 	margin-top: 80px;
 	padding-left: 10%;
 	padding-right: 10%;
@@ -54,6 +54,6 @@ body {
 
 #main {
 	background: white;
-	padding-bottom: 200px;
-    height: 1000px;
+	padding-bottom: 500px;
+    height: auto;
 }

@@ -32,7 +32,7 @@ function onSearch() {
 
 	if (address.length == 0) {
 		alert('Warning: Please input the geo address');
-		return true;
+		return false;
 	}
 
   	$.ajax({

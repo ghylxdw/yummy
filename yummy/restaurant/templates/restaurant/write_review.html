@@ -8,13 +8,14 @@
 
 {% block main-content %}
 
-<div class="center-form">
+<div class="center-form" style="padding-top: 20px;">
 
     {% if errors %}
     <p class="alert alert-danger">
         {{ errors }}
     </p>
-    {% endif %}
+
+    {% else %}
 
     {% for error in form.errors %}
     <p class="alert alert-danger">
@@ -38,13 +39,15 @@
 
         <label> high </label><br>
 
-        <input class="btn btn-primary" type="submit" value="Submit">
-        <a class="btn btn-warning" href="{% url 'restaurant_home' restaurant_id %}" >
+        <input class="btn btn-primary nice-btn" type="submit" value="Submit">
+        <a class="btn btn-warning nice-btn" href="{% url 'restaurant_home' restaurant_id %}" >
             Cancel Review
         </a>
 
         {% csrf_token %}
     </form>
+
+    {% endif %}
 
 </div>
 

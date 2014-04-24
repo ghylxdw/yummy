@@ -15,6 +15,13 @@ function loadMap(center, restaurants, zoom) {
         map: map
     });
 
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent("You are current here!");
+          infowindow.open(map, marker);
+        }
+    })(marker, i));
+
     for (i = 0; i < restaurants.length; i++) {
         var location = restaurants[i].fields.location.split(" ");
         var lat = parseFloat(location[2]);
@@ -27,7 +34,7 @@ function loadMap(center, restaurants, zoom) {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i][0]);
+          infowindow.setContent(restaurants[i].fields.name);
           infowindow.open(map, marker);
         }
         })(marker, i));
@@ -51,13 +58,13 @@ function sendAjax() {
 
     switch(parameters.distance) {
         case "2":
-            zoom = 13;
-            break;
-        case "5":
             zoom = 12;
             break;
-        case "10":
+        case "5":
             zoom = 11;
+            break;
+        case "10":
+            zoom = 10;
             break;
     }
 
@@ -86,16 +93,18 @@ function drawLi(restaurant) {
     var li = $("<li class=\"row list-space top-border\">")
     $("#restaurant-list").append(li);
     var div1 = $("<div class=\"col-md-3\" />");
-    var div2 = $("<div class=\"col-md-5\" />");
-    var div3 = $("<div class=\"col-md-3\" />");
+    var div2 = $("<div class=\"col-md-4\" style=\"width:auto;\" />");
+    var div3 = $("<div class=\"col-md-5\" />");
 
-    div1.append($("<h4><a href=\"/restaurant/" + restaurant.pk + "\">" + restaurant.fields.name +"</a></h4>"));
+    div1.append($("<h3><a href=\"/restaurant/" + restaurant.pk + "\">" + restaurant.fields.name +"</a></h3>"));
+    div1.append($("<address><strong>" + restaurant.fields.address + "</strong></address>"));
+    div1.append($("<p>" + Math.round(restaurant.fields.distance*10)/10 +" miles away</p>"));
 
-    div2.append($("<h4>Rating:" + restaurant.fields.avg_rating + " Reviews: " + restaurant.fields.review_number + "</h4>"));
-    div2.append($("<h4>Introduction</h4>"));
-    div2.append($("<p>" + restaurant.fields.introduction + "</p>"));
+    div2.append($("<img style=\"float:left;\" src=\"/static/images/rating" + Math.ceil(restaurant.fields.avg_rating) + ".png\" height=\"42px\" width=\"200px\">"));
+    div2.append($("<h4 style=\"float:right;\">" + restaurant.fields.review_number + " Reviews </h4>"));
 
-    div3.append($("<address><strong>" + restaurant.fields.address + "</strong></address>"));
+    div3.append($("<h4>Introduction</h4>"));
+    div3.append($("<p>" + restaurant.fields.introduction + "</p>"));
 
     li.append(div1);
     li.append(div2);

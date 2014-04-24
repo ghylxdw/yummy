@@ -1,18 +1,28 @@
 $(document).ready(function() {
-	getLocation();
+    var lat = $("#id_latitude").val();
+    var lng = $("#id_longitude").val();
+
+    if (lat) {
+        var center = new google.maps.LatLng(lat, lng);
+        loadMap(center);
+    } else {
+        getLocation();
+    }
+
 });
 
 function getLocation(){
     if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(loadMap);
+		navigator.geolocation.getCurrentPosition(function(position) {
+            var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            loadMap(center);
+        });
 	} else {
 		x.innerHTML="Geolocation is not supported by this browser.";
 	}
 };
 
 function loadMap(center) {
-
-    var center = new google.maps.LatLng(center.coords.latitude, center.coords.longitude);
 
     var mapOptions = {
           center: center,
@@ -49,7 +59,7 @@ function getLatLng() {
                 $('#id_longitude').val(lng);
                 $('#id_latitude').val(lat);
 
-                var center = new google.maps.LatLng(center.coords.latitude, center.coords.longitude);
+                var center = new google.maps.LatLng(lat, lng);
                 loadMap(center);
 
                 return true;
@@ -72,20 +82,26 @@ function postRecipe() {
         processData: false,  // tell jQuery not to process the data
         contentType: false,   // tell jQuery not to set contentType
         success: function( response ) {
-            alert(response.id);
-            
-            var ids = $("#").val();
 
+            var ids = $('#id_added_recipes').val();
+            if (ids.length == 0) {
+                $("#id_added_recipes").val(response.id);
+            } else {
+                $("#id_added_recipes").val(ids + "_" + response.id);
+            }
 
             var tr = $("<tr id=\"recipe" + response.id + "\">");
             $("#recipe-table").append(tr);
 
-            var td = $("<td style=\"display: inline-flex;\">");
+            var td = $("<td>");
             tr.append(td);
 
             td.append($("<h4>" + response.name +"</h4>"));
-            td.append($("<img src=\"restaurant/recipe-image/" + response.id + "\">"));
+            td.append($("<img src=\"/restaurant/recipe-image/" + response.id + "\" height=\"100px\" width=\"200px\">"));
             td.append($("<a onclick=\"deleteRecipe(" + response.id + ")\">delete</a>"));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert("Invalid picture format or invalid recipe name!!!");
         }
     });
 
@@ -95,13 +111,22 @@ function postRecipe() {
 function deleteRecipe(id) {
 
     $("#recipe" + id).remove();
-
-    alert("success remove " + id);
+    var csrftoken = $.cookie('csrftoken');
 
     $.ajax ({
         url: "/account/delete-recipe",
         type: "POST",
-        data: {'id' : id},
+        data: {'id' : id, 'csrfmiddlewaretoken' : csrftoken}
+    });
+}
+
+function onCancel() {
+    var csrftoken = $.cookie('csrftoken');
+
+    $.ajax ({
+        url: "/account/cancel-add-edit-restaurant",
+        type: "POST",
+        data: {'delete_recipes' :  $("#id_added_recipes").val(), 'csrfmiddlewaretoken' : csrftoken}
     });
 }
 

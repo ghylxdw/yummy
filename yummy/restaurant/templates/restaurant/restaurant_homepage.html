@@ -9,15 +9,17 @@
 
 {% block main-content %}
 
-<input type="hidden" value="{{ restaurant.id }}" id="restID-hid">
-<input type="hidden" value="{{ restaurant.location.x }}" id="lng-hid">
-<input type="hidden" value="{{ restaurant.location.y }}"  id="lat-hid">
-
-{% if error in errors %}
-    <p class="alert alert-danger">{{ error }}</p>
-{% endif %}
 
 <div class="inner-wrap">
+
+    {% if errors %}
+        <p class="alert alert-danger">{{ errors }}</p>
+    {% else %}
+
+    <input type="hidden" value="{{ restaurant.id }}" id="restID-hid">
+    <input type="hidden" value="{{ restaurant.location.x }}" id="lng-hid">
+    <input type="hidden" value="{{ restaurant.location.y }}"  id="lat-hid">
+
     <table class="table center-table">
         <tr>
             <td>
@@ -25,13 +27,13 @@
                 <div id="map-canvas" class="map-container"></div>
             </td>
             <td>
-                <h4>Introduction</h4>
+                <h4 style="padding-top: 50px; font-family: Monaco;">Introduction</h4>
                 <p>
                     {{ restaurant.introduction }}
                 </p>
-                <h4> Address </h4>
+                <h4 style="padding-top: 50px; font-family: Monaco"> Address </h4>
                 <address>
-                    <strong>{{ restaurant.address }}</strong>
+                    {{ restaurant.address }}
                 </address>
             </td>
             <td>
@@ -40,21 +42,25 @@
                     <a class="btn btn-primary nice-btn" href="{% url 'edit_restaurant' restaurant.id %}">Edit Restaurant</a>
                     {% endif %}
                     <br>
+                    {% if not is_owner %}
                     <a class="btn btn-primary nice-btn" href="{% url 'write_review' restaurant.id %}">Write Review</a>
+                    {% endif %}
                 {% endif %}
             </td>
         </tr>
     </table>
 
-    <div id="slideShowImages" class="center-table">
-        {% for recipe in recipes %}
-            <img src="{{ recipe.picture }}" alt="Slide {{ recipe.id }}" />
-        {% endfor %}
-    </div>  
-    <a class="btn btn-primary" href="{% url 'restaurant_menu' restaurant.id %}" id="slideShowButton">Show whole menu</a>
-</div>
+    <div class="center-table">
+        <h2 class="bot-border">Recipes</h2>
+        <div id="slideShowImages" style="margin-left: 25%; width: 500px;">
+            <a href="{% url 'restaurant_menu' restaurant.id %}">
+            {% for recipe in recipes %}
+                <img src="{%  url 'get_recipe_image' recipe.id %}" alt="Slide {{ recipe.id }}" height="400px" width="500px"/>
+            {% endfor %}
+            </a>
+        </div>
+    </div>
 
-<div class="inner-wrap">
     <h2 class="bot-border center-table"> Reviews </h2>
 
 	<table class="center-table" id="review-table">
@@ -84,6 +90,8 @@
 		</tr>
 		{% endfor %}
     </table>
+
+    {% endif %}
 </div>
 
 {% endblock %}

@@ -61,6 +61,7 @@ def restaurant_menu(request, restaurant_id):
 
     recipes = Recipe.objects.filter(restaurant=restaurant)
     context['recipes'] = recipes
+    context['restaurant_name'] = restaurant.name
 
     return render(request, 'restaurant/restaurant_menu.html', context)
 
@@ -70,9 +71,6 @@ def restaurant_menu(request, restaurant_id):
 def write_review(request, restaurant_id):
     context = {'restaurant_id': restaurant_id}
 
-    if request.method == 'GET':
-        context['form'] = ReviewForm()
-        return render(request, 'restaurant/write_review.html', context)
     try:
         restaurant = Restaurant.objects.get(id=restaurant_id)
     except Restaurant.DoesNotExist:
@@ -85,7 +83,11 @@ def write_review(request, restaurant_id):
     if restaurant.owner == request.user:
         context['errors'] = 'you cannot write reviews for your own restaurant'
         return render(request, 'restaurant/write_review.html', context)
-    
+
+    if request.method == 'GET':
+        context['form'] = ReviewForm()
+        return render(request, 'restaurant/write_review.html', context)
+
     review = Review(reviewer=request.user, restaurant=restaurant)
     review_form = ReviewForm(request.POST, instance=review)
     context['form'] = review_form

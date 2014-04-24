@@ -12,7 +12,8 @@
 	<p class="alert alert-danger">
     	{{ errors }}
     </p>
-    {% endif %}
+
+    {% else %}
 
     <div class="center-form">
         <h2 class="col-lg-8">Welcome to your restaurants, {{ user.first_name }} {{ user.last_name }}</h2>
@@ -23,7 +24,7 @@
 		{% for restaurant in restaurants %}
 		<tr class="bot-border">
             <td class="col-lg-3">
-            <h4>{{ restaurant.name }}</h4>
+            <h4><a href="{%  url 'restaurant_home' restaurant.id %}">{{ restaurant.name }}</a></h4>
             <p>{{ restaurant.address}}</p>
             </td>
             <td class="col-lg-1">
@@ -49,5 +50,7 @@
 		</tr>
 		{% endfor %}
     </table>
+
+    {% endif %}
 
 {% endblock %}

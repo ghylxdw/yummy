@@ -16,22 +16,10 @@ h2 {
 	margin-right: 50px;
 }
 
-.star-rating s {
-    color: red;
-    font-size: 50px;
-    cursor: default;
-    text-decoration: none;
-    line-height: 50px;
-}
-
-.star-rating s:before {
-    content: "\2605";
-}
-
 .map-container {
     position: relative;
-    margin-top: 100px;
+    margin-top: 30px;
     border-color: dodgerblue;
-    height: 300px;
-    width: 500px;
+    height: 400px;
+    width: 600px;
 }

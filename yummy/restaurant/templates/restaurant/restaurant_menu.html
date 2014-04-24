@@ -9,23 +9,25 @@
 {% block main-content %}
 
 <div class="inner-wrap center-table">
-    <h2>Recipe in restaurant {{ restaurant }}</h2>
 
-    {% if error in errors %}
-        <p class="alert alert-danger">{{ error }}</p>
-    {% endif %}
+    {% if errors %}
+        <p class="alert alert-danger">{{ errors }}</p>
+    {% else %}
+
+    <h2 class="bot-border" style="padding-top: 20px">Recipe in {{ restaurant_name }}</h2>
 
     <ul class="list-unstyled" id="review-list">
-        {% for recipe in recipe_list %}
-        <li class="list-space top-border" style="display:inline-flex;">
-            <h4>{{ recipe.name }}</h4>
-            <img src="{{ recipe.picture }}" alt="{{ recipe.id }}">
+        {% for recipe in recipes %}
+        <li class="list-space bot-border" style="text-align: center;">
+            <h2>{{ recipe.name }}</h2>
+            <img src="{% url 'get_recipe_image' recipe.id %}" alt="{{ recipe.id }}" height="600px" width="800px">
         </li>
         {% endfor %}
     </ul>
 
-    <a class="btn btn-primary" href="{% url 'restaurant_home' restaurant_id %}">Back</a>
-</div>  
+    {% endif %}
+
+</div>
 
 {% endblock %}
 

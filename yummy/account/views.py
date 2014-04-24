@@ -60,7 +60,8 @@ def register(request):
         return render(request, 'account/register.html', context)
 
     subject = 'Confirmation from Yummy'
-    message = 'Click this link to activate your account: ' + 'http://ghylxdw.homeip.net:8000/account/activate/' + token
+    message = 'Click this link to activate your account: ' + "http://71.61.178.1:8000/" + \
+              reverse('activate', kwargs={'token': token})
     from_addr = 'team39.yummy@gmail.com'
     recipients = [form.cleaned_data['email']]
     # send the activation email to the registered email address asynchronously by starting a daemon thread
@@ -173,6 +174,8 @@ def edit_restaurant(request, restaurant_id):
         context['errors'] = 'you have no access to edit this restaurant'
         return render(request, 'account/edit-restaurant.html', context)
 
+    context['restaurant_id'] = restaurant_id
+
     if request.method == 'GET':
         # since we are not using a model form, we have to render and bound the existing data to the form manually
         rest_dict = {'name': restaurant.name, 'introduction': restaurant.introduction, 'address': restaurant.address,
@@ -223,7 +226,6 @@ def relate_added_recipes_helper(restaurant, added_recipes):
 @transaction.atomic
 def upload_recipe(request):
     if not request.user.is_authenticated() or request.user.userprofile.is_customer or request.method == 'GET':
-        print 'other thing fail'
         raise Http404
 
     new_recipe = Recipe(uploader=request.user)
