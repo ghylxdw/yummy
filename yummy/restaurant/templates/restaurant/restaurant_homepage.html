@@ -28,18 +28,18 @@
             </td>
             <td style="padding-top: 50px;">
                 <div style="width:auto; display:inline-flex;">
-                    {% if restaurant.rating <= 1 %}
-                        <img src="{% static "images/rating1.png" %}" width="180px">
-                    {% elif restaurant.rating <= 2 %}
-                        <img src="{% static "images/rating2.png" %}" width="180px">
-                    {% elif restaurant.rating <= 3 %}
-                        <img src="{% static "images/rating3.png" %}" width="180px">
-                    {% elif restaurant.rating <= 4 %}
-                        <img src="{% static "images/rating4.png" %}" width="180px">
-                    {% elif restaurant.rating <= 5 %}
-                        <img src="{% static "images/rating5.png" %}" width="180px">
+                    {% if restaurant.avg_rating <= 1 %}
+                        <img src="{% static "images/rating1.png" %}" height="40px">
+                    {% elif restaurant.avg_rating <= 2 %}
+                        <img src="{% static "images/rating2.png" %}" height="40px">
+                    {% elif restaurant.avg_rating <= 3 %}
+                        <img src="{% static "images/rating3.png" %}" height="40px">
+                    {% elif restaurant.avg_rating <= 4 %}
+                        <img src="{% static "images/rating4.png" %}" height="40px">
+                    {% elif restaurant.avg_rating <= 5 %}
+                        <img src="{% static "images/rating5.png" %}" height="40px">
                     {% endif %}
-                    <h4 style="padding-left:5px;">{{ restaurant.review_number }} reviews</h4>
+                    <h4 style="padding-left:5px;">{{ restaurant.avg_rating }}ratings</br>{{ restaurant.review_number }} reviews</h4>
                 </div>
 
                 <h4 style="padding-top: 20px; font-family: Monaco;">Introduction</h4>
@@ -67,7 +67,7 @@
 
     <div class="center-table">
         <h2 class="bot-border">Recipes</h2>
-        <div id="slideShowImages" style="margin-left: 20%;">
+        <div id="slideShowImages" style="margin-left:auto; margin-right:auto;">
             <a href="{% url 'restaurant_menu' restaurant.id %}">
             {% for recipe in recipes %}
                 <img src="{%  url 'get_recipe_image' recipe.id %}" alt="Slide {{ recipe.id }}" height="500px">

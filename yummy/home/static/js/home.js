@@ -57,14 +57,14 @@ function drawLi(restaurant) {
     var li = $("<li class=\"row list-space top-border\">")
     $("#restaurant-list").append(li);
     var div1 = $("<div class=\"col-md-3\" />");
-    var div2 = $("<div class=\"col-md-4\" style=\"width:auto;\" />");
-    var div3 = $("<div class=\"col-md-5\" />");
+    var div2 = $("<div class=\"col-md-3\" style=\"width:auto;padding-top:50px;\"/>");
+    var div3 = $("<div class=\"col-md-5\" style=\"padding-top:20px;\"/>");
 
     div1.append($("<h3><a href=\"/restaurant/" + restaurant.pk + "\">" + restaurant.fields.name +"</a></h3>"));
     div1.append($("<address><strong>" + restaurant.fields.address + "</strong></address>"));
     div1.append($("<p>" + Math.round(restaurant.fields.distance*10)/10 +" miles away</p>"));
 
-    div2.append($("<img style=\"float:left;\" src=\"/static/images/rating" + Math.ceil(restaurant.fields.avg_rating) + ".png\" height=\"42px\" width=\"200px\">"));
+    div2.append($("<img style=\"float:left;\" src=\"/static/images/rating" + Math.ceil(restaurant.fields.avg_rating) + ".png\" width=\"200px\">"));
     div2.append($("<h4 style=\"float:right;\">" + restaurant.fields.review_number + " Reviews </h4>"));
 
     div3.append($("<h4>Introduction</h4>"));

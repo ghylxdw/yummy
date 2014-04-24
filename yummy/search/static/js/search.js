@@ -10,9 +10,11 @@ function loadMap(center, restaurants, zoom) {
 
     var marker, i;
 
+    var image = '/static/images/current.png';
     marker = new google.maps.Marker({
         position: center,
-        map: map
+        map: map,
+        icon: image
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -94,19 +96,19 @@ function drawLi(restaurant) {
     $("#restaurant-list").append(li);
     var div1 = $("<div class=\"col-md-3\" />");
     var div2 = $("<div class=\"col-md-4\" />");
-    var div3 = $("<div class=\"col-md-5\" />");
+    var div3 = $("<div class=\"col-md-5\" style=\"padding-top: 20px;\"/>");
 
     div1.append($("<h3><a href=\"/restaurant/" + restaurant.pk + "\">" + restaurant.fields.name +"</a></h3>"));
     div1.append($("<address><strong>" + restaurant.fields.address + "</strong></address>"));
     div1.append($("<p>" + Math.round(restaurant.fields.distance*10)/10 +" miles away</p>"));
 
-    var divRating = $("<div style=\"width:auto; padding-top: 50px;\" />");
-    divRating.append($("<img style=\"float:left;\" src=\"/static/images/rating" + Math.ceil(restaurant.fields.avg_rating) + ".png\" width=\"200px\">"));
-    divRating.append($("<h4 style=\"float:right;\">" + restaurant.fields.review_number + " Reviews </h4>"));
+    var divRating = $("<div style=\"width:auto; padding-top: 50px; display:inline-flex;\" />");
+    divRating.append($("<img src=\"/static/images/rating" + Math.ceil(restaurant.fields.avg_rating) + ".png\" width=\"200px\">"));
+    divRating.append($("<h4>" + restaurant.fields.review_number + " Reviews </h4>"));
 
     div2.append(divRating);
     if (restaurant.fields.recipe_id) {
-        div2.append($("<p>This restaurant has " + restaurant_list.fields.recipe_name + "</p>"));
+        div2.append($("<p>This restaurant has " + restaurant.fields.recipe_name + "</p>"));
     }
 
     div3.append($("<h4>Introduction</h4>"));

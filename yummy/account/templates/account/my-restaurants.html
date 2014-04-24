@@ -23,25 +23,25 @@
     <table class="center-form" style="padding-top: 20px; border-top: solid; border-top-color: dodgerblue;">
 		{% for restaurant in restaurants %}
 		<tr class="bot-border">
-            <td class="col-lg-5">
+            <td class="col-lg-3">
             <h4><a href="{%  url 'restaurant_home' restaurant.id %}">{{ restaurant.name }}</a></h4>
             <p>{{ restaurant.address}}</p>
             <div style="width:auto; display:inline-flex;">
                 {% if restaurant.avg_rating  <= 1 %}
-                    <img src="{% static "images/rating1.png" %}" width="200px">
+                    <img src="{% static "images/rating1.png" %}" height="40px">
                 {% elif restaurant.avg_rating <= 2 %}
-                    <img src="{% static "images/rating2.png" %}" width="200px">
+                    <img src="{% static "images/rating2.png" %}" height="40px">
                 {% elif restaurant.avg_rating <= 3 %}
-                    <img src="{% static "images/rating3.png" %}" width="200px">
+                    <img src="{% static "images/rating3.png" %}" height="40px">
                 {% elif restaurant.avg_rating <= 4 %}
-                    <img src="{% static "images/rating4.png" %}" width="200px">
+                    <img src="{% static "images/rating4.png" %}" height="40px">
                 {% elif restaurant.avg_rating <= 5 %}
-                    <img src="{% static "images/rating5.png" %}" width="200px">
+                    <img src="{% static "images/rating5.png" %}" height="40px">
                 {% endif %}
-                <h4>rating: {{ restaurant.avg_rating }} <br> {{ restaurant.review_number }} reviews</h4>
+                <h4>{{ restaurant.avg_rating }} ratings<br> {{ restaurant.review_number }} reviews</h4>
             </div>
             </td>
-            <td class="col-lg-5">
+            <td class="col-lg-6">
                 <h4>Introduction</h4>
                 <p><strong>{{ restaurant.introduction }}</strong></p>
             </td>
