@@ -84,6 +84,11 @@ def write_review(request, restaurant_id):
         context['errors'] = 'you cannot write reviews for your own restaurant'
         return render(request, 'restaurant/write_review.html', context)
 
+    prev_reviews = Review.objects.filter(reviewer=request.user, restaurant=restaurant)
+    if len(prev_reviews) > 0:
+        context['errors'] = 'you cannot write more than one reviews for one restaurant'
+        return render(request, 'restaurant/write_review.html', context)
+
     if request.method == 'GET':
         context['form'] = ReviewForm()
         return render(request, 'restaurant/write_review.html', context)
