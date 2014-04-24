@@ -20,7 +20,7 @@
         {% for recipe in recipes %}
         <li class="list-space bot-border" style="text-align: center;">
             <h2>{{ recipe.name }}</h2>
-            <img src="{% url 'get_recipe_image' recipe.id %}" alt="{{ recipe.id }}" height="600px" width="800px">
+            <img src="{% url 'get_recipe_image' recipe.id %}" alt="{{ recipe.id }}" height="600px">
         </li>
         {% endfor %}
     </ul>

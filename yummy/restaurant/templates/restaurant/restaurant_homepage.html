@@ -52,10 +52,10 @@
 
     <div class="center-table">
         <h2 class="bot-border">Recipes</h2>
-        <div id="slideShowImages" style="margin-left: 25%; width: 500px;">
+        <div id="slideShowImages" style="margin-left: 20%;">
             <a href="{% url 'restaurant_menu' restaurant.id %}">
             {% for recipe in recipes %}
-                <img src="{%  url 'get_recipe_image' recipe.id %}" alt="Slide {{ recipe.id }}" height="400px" width="500px"/>
+                <img src="{%  url 'get_recipe_image' recipe.id %}" alt="Slide {{ recipe.id }}" height="500px">
             {% endfor %}
             </a>
         </div>

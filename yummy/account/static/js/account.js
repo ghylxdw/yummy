@@ -97,7 +97,7 @@ function postRecipe() {
             tr.append(td);
 
             td.append($("<h4>" + response.name +"</h4>"));
-            td.append($("<img src=\"/restaurant/recipe-image/" + response.id + "\" height=\"100px\" width=\"200px\">"));
+            td.append($("<img src=\"/restaurant/recipe-image/" + response.id + "\" width=\"200px\">"));
             td.append($("<a onclick=\"deleteRecipe(" + response.id + ")\">delete</a>"));
         },
         error: function (xhr, ajaxOptions, thrownError) {

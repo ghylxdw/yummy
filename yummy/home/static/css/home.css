@@ -4,6 +4,12 @@ h1 {
     padding-bottom: 15px;
 }
 
+h2 {
+	padding-top: 20px;
+	margin-left: 5%;
+	padding-bottom: 15px;
+}
+
 h4 {
     color: red;
 }
