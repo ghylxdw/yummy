@@ -26,12 +26,27 @@
                 <h2>{{ restaurant.name }}</h2>
                 <div id="map-canvas" class="map-container"></div>
             </td>
-            <td>
-                <h4 style="padding-top: 50px; font-family: Monaco;">Introduction</h4>
+            <td style="padding-top: 50px;">
+                <div style="width:auto; display:inline-flex;">
+                    {% if restaurant.rating <= 1 %}
+                        <img src="{% static "images/rating1.png" %}" width="180px">
+                    {% elif restaurant.rating <= 2 %}
+                        <img src="{% static "images/rating2.png" %}" width="180px">
+                    {% elif restaurant.rating <= 3 %}
+                        <img src="{% static "images/rating3.png" %}" width="180px">
+                    {% elif restaurant.rating <= 4 %}
+                        <img src="{% static "images/rating4.png" %}" width="180px">
+                    {% elif restaurant.rating <= 5 %}
+                        <img src="{% static "images/rating5.png" %}" width="180px">
+                    {% endif %}
+                    <h4 style="padding-left:5px;">{{ restaurant.review_number }} reviews</h4>
+                </div>
+
+                <h4 style="padding-top: 20px; font-family: Monaco;">Introduction</h4>
                 <p>
                     {{ restaurant.introduction }}
                 </p>
-                <h4 style="padding-top: 50px; font-family: Monaco"> Address </h4>
+                <h4 style="padding-top: 20px; font-family: Monaco"> Address </h4>
                 <address>
                     {{ restaurant.address }}
                 </address>
@@ -63,27 +78,25 @@
 
     <h2 class="bot-border center-table"> Reviews </h2>
 
-	<table class="center-table" id="review-table">
+	<table class="table center-table" id="review-table">
 		{% for review in reviews %}
 		<tr class="bot-border">
             <td class="col-lg-3">
-            <h4>{{ review.reviewer.first_name }} {{ review.reviewer.last_name }}</h4>
+            <h4>{{ review.reviewer.first_name }} {{ review.reviewer.last_name }} reviews:</h4>
             <p>{{ review.create_time }}</p>
+            {% if review.rating <= 1 %}
+                <img src="{% static "images/rating1.png" %}" width="200px">
+            {% elif review.rating <= 2 %}
+                <img src="{% static "images/rating2.png" %}" width="200px">
+            {% elif review.rating <= 3 %}
+                <img src="{% static "images/rating3.png" %}" width="200px">
+            {% elif review.rating <= 4 %}
+                <img src="{% static "images/rating4.png" %}" width="200px">
+            {% elif review.rating <= 5 %}
+                <img src="{% static "images/rating5.png" %}" width="200px">
+            {% endif %}
             </td>
-            <td class="col-lg-3">
-                {% if review.rating <= 1 %}
-                <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 2 %}
-                    <img src="{% static "images/rating2.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 3 %}
-                    <img src="{% static "images/rating3.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 4 %}
-                    <img src="{% static "images/rating4.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 5 %}
-                    <img src="{% static "images/rating5.png" %}" height="42px" width="200px">
-                {% endif %}
-            </td>
-            <td class="col-lg-3">
+            <td class="col-lg-6">
                 <h4>Comment</h4>
                 <p><strong>{{ review.content }}</strong></p>
             </td>

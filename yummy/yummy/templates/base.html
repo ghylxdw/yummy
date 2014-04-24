@@ -69,7 +69,7 @@
               </form>
 
               <ul class="nav navbar-nav navbar-right" id="header_login">
-                {% if user.is_authenticated %}
+                {% if user and user.is_authenticated %}
                     {% if not user.userprofile.is_customer %}
                     <li><a href="{% url 'my_restaurants' %}">My Restaurants</a></li>
                     {% endif %}

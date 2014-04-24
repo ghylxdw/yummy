@@ -9,27 +9,25 @@
 
     <h2 class="bot-border center-form"> Welcome to your reviews, {{ user.first_name }} {{ user.last_name }}</h2>
 
-	<table class="center-form">
+	<table class="table center-form">
 		{% for review in reviews %}
 		<tr class="bot-border">
             <td class="col-lg-3">
             <h4><a href="{% url 'restaurant_home' review.restaurant_id %}">{{ review.restaurant.name }}</a></h4>
             <p>{{ review.create_time }}</p>
+            {% if review.rating <= 1 %}
+                <img src="{% static "images/rating1.png" %}" width="200px">
+            {% elif review.rating <= 2 %}
+                <img src="{% static "images/rating2.png" %}" width="200px">
+            {% elif review.rating <= 3 %}
+                <img src="{% static "images/rating3.png" %}" width="200px">
+            {% elif review.rating <= 4 %}
+                <img src="{% static "images/rating4.png" %}" width="200px">
+            {% elif review.rating <= 5 %}
+                <img src="{% static "images/rating5.png" %}" width="200px">
+            {% endif %}
             </td>
-            <td class="col-lg-3">
-                {% if review.rating <= 1 %}
-                    <img src="{% static "images/rating1.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 2 %}
-                    <img src="{% static "images/rating2.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 3 %}
-                    <img src="{% static "images/rating3.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 4 %}
-                    <img src="{% static "images/rating4.png" %}" height="42px" width="200px">
-                {% elif review.rating <= 5 %}
-                    <img src="{% static "images/rating5.png" %}" height="42px" width="200px">
-                {% endif %}
-            </td>
-            <td class="col-lg-3">
+            <td class="col-lg-6">
                 <h4>Comment</h4>
                 <p><strong>{{ review.content }}</strong></p>
             </td>

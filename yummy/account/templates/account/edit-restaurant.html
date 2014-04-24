@@ -47,7 +47,7 @@
 
             <div style="margin-right:50px; margin-top:20px;">
             <input type="submit" value="Done" class="btn btn-primary col-lg-2" style="height:40px; width:100px;" />
-            <a class="btn btn-primary col-lg-2" style="margin-left:20px; height:40px; width:100px;" href="{% url 'my_restaurants' %}" onclick="onCancel()">Cancel</a>
+            <a class="btn btn-primary col-lg-2" style="margin-left:20px; height:40px; width:100px;" href="{% url 'restaurant_home' restaurant_id %}" onclick="onCancel()">Cancel</a>
             </div>
 
             {% csrf_token %}
