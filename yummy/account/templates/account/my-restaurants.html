@@ -38,7 +38,7 @@
                 {% elif restaurant.avg_rating <= 5 %}
                     <img src="{% static "images/rating5.png" %}" height="40px">
                 {% endif %}
-                <h4>{{ restaurant.avg_rating }} ratings<br> {{ restaurant.review_number }} reviews</h4>
+                <h4>Rating: {{ restaurant.avg_rating }}<br> {{ restaurant.review_number }} reviews</h4>
             </div>
             </td>
             <td class="col-lg-6">

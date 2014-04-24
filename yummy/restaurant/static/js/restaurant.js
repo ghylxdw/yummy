@@ -1,7 +1,7 @@
 function loadMap(center) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 12,
+        zoom: 14,
         center: center,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });

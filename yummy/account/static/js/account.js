@@ -75,6 +75,7 @@ function getLatLng() {
 
 function postRecipe() {
     var fd = new FormData(document.getElementById("recipe_upload"));
+
     $.ajax({
         url: "/account/upload-recipe",
         type: "POST",
@@ -99,6 +100,8 @@ function postRecipe() {
             td.append($("<h4>" + response.name +"</h4>"));
             td.append($("<img src=\"/restaurant/recipe-image/" + response.id + "\" width=\"200px\">"));
             td.append($("<a onclick=\"deleteRecipe(" + response.id + ")\">delete</a>"));
+
+            $("#recipe-name").val("");
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert("Invalid picture format or invalid recipe name!!!");

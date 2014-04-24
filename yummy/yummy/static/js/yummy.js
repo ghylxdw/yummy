@@ -34,13 +34,14 @@ function onSearch() {
 		alert('Warning: Please input the geo address');
 		return false;
 	}
-
+	
   	$.ajax({
 	    datatype: "json",
 	    url: "https://maps.googleapis.com/maps/api/geocode/json",
 	    data: {address: address, sensor: true},
 	    success: function(geocode) {
 	    	if ( geocode ) {
+	    		
 				var lat = geocode.results[0].geometry.location.lat;
 		        var lng = geocode.results[0].geometry.location.lng;
 

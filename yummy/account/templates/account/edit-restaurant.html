@@ -67,7 +67,7 @@
 
         <form enctype="multipart/form-data" onsubmit="return postRecipe()" id="recipe_upload">
               <label>Upload recipe:</label>
-              <input class="form-control" style="width: 300px;" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
+              <input id="recipe-name" class="form-control" style="width: 300px;" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
               <input type="file" name="picture" required />
               <input class="btn btn-primary" style="margin-top: 10px; height:30px; width:100px;" type="submit" value="Upload" />
             {% csrf_token %}

@@ -8,7 +8,7 @@
 
 {% block main-content %}
 <h1>  Welcome to Yummy
-    {% if user or user.is_authenticated %}
+    {% if user.is_authenticated %}
         ,{{ user.first_name }} {{ user.last_name }}
     {% endif %}
     !

@@ -60,7 +60,7 @@ def register(request):
         return render(request, 'account/register.html', context)
 
     subject = 'Confirmation from Yummy'
-    message = 'Click this link to activate your account: ' + "http://71.61.178.1:8000" + \
+    message = 'Click this link to activate your account: ' + "http://128.237.180.208:8000" + \
               reverse('activate', kwargs={'token': token})
     from_addr = 'team39.yummy@gmail.com'
     recipients = [form.cleaned_data['email']]

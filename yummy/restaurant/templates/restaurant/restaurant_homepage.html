@@ -24,9 +24,6 @@
         <tr>
             <td>
                 <h2>{{ restaurant.name }}</h2>
-                <div id="map-canvas" class="map-container"></div>
-            </td>
-            <td style="padding-top: 50px;">
                 <div style="width:auto; display:inline-flex;">
                     {% if restaurant.avg_rating <= 1 %}
                         <img src="{% static "images/rating1.png" %}" height="40px">
@@ -39,7 +36,7 @@
                     {% elif restaurant.avg_rating <= 5 %}
                         <img src="{% static "images/rating5.png" %}" height="40px">
                     {% endif %}
-                    <h4 style="padding-left:5px;">{{ restaurant.avg_rating }}ratings</br>{{ restaurant.review_number }} reviews</h4>
+                    <h4 style="padding-left:5px;">Rating: {{ restaurant.avg_rating }}</br>{{ restaurant.review_number }} reviews</h4>
                 </div>
 
                 <h4 style="padding-top: 20px; font-family: Monaco;">Introduction</h4>
@@ -51,7 +48,8 @@
                     {{ restaurant.address }}
                 </address>
             </td>
-            <td>
+            <td >
+                <div style="margin-bottom: 20px;">
                 {% if user.is_authenticated %}
                     {% if not user.userprofile.is_customer and is_owner %}
                     <a class="btn btn-primary nice-btn" href="{% url 'edit_restaurant' restaurant.id %}">Edit Restaurant</a>
@@ -61,6 +59,8 @@
                     <a class="btn btn-primary nice-btn" href="{% url 'write_review' restaurant.id %}">Write Review</a>
                     {% endif %}
                 {% endif %}
+                </div>
+                <div id="map-canvas" class="map-container" ></div>
             </td>
         </tr>
     </table>

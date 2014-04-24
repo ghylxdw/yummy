@@ -48,7 +48,7 @@
         {% endfor %}
         
         <div style="margin-right:50px; margin-top:20px;">
-        <input type="submit" value="Add" class="btn btn-primary col-lg-2" style="height:40px; width:100px;" />
+        <input type="submit" value="Done" class="btn btn-primary col-lg-2" style="height:40px; width:100px;" />
         <a class="btn btn-primary col-lg-2" style="margin-left:20px; height:40px; width:100px;" href="{% url 'my_restaurants' %}" onclick="onCancel()">Cancel</a>
         </div>
 
@@ -60,7 +60,7 @@
 
     <form enctype="multipart/form-data" onsubmit="return postRecipe()" id="recipe_upload">
           <label>Upload recipe:</label>
-          <input class="form-control" style="width: 300px;" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
+          <input id="recipe-name" class="form-control" style="width: 300px;" maxlength="64" name="name" placeholder="Recipe Name" required/><br />
           <input type="file" name="picture" required />
           <input class="btn btn-primary" style="margin-top: 10px; height:30px; width:100px;" type="submit" value="Upload" />
         {% csrf_token %}
