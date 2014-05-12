@@ -23,41 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add-restaurant.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/templates/account/add-restaurant.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="43" selection-start="2048" selection-end="2048" vertical-scroll-proportion="-20.0" vertical-offset="375" max-vertical-offset="1185">
-              <folding>
-                <element signature="e#1752#1785#0" expanded="true" />
-                <element signature="e#2618#2644#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-restaurant.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/templates/account/edit-restaurant.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="15" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-6.94" vertical-offset="448" max-vertical-offset="1320">
-              <folding>
-                <element signature="e#1960#2011#0" expanded="true" />
-                <element signature="e#2840#2861#0" expanded="true" />
-                <element signature="e#3037#3088#0" expanded="true" />
-                <element signature="e#3246#3272#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="account.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/static/css/account.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="16" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,10 +32,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restaurant/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="94" selection-start="151" selection-end="166" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="activate-page.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/templates/account/activate-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="405">
+            <state line="12" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="390">
               <folding>
                 <element signature="e#297#332#0" expanded="true" />
               </folding>
@@ -81,7 +55,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restaurant/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="27" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="825">
+            <state line="21" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="825">
               <folding />
             </state>
           </provider>
@@ -96,28 +70,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yummy/static/css/base.css">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="1" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="960">
+            <state line="62" column="85" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="4230">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my-reviews.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/templates/account/my-reviews.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="68" selection-start="475" selection-end="475" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="675">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restaurant/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="9" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/account/views.py">
+        <entry file="file://$PROJECT_DIR$/search/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="85" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.608365" vertical-offset="225" max-vertical-offset="4230">
+            <state line="119" column="0" selection-start="4576" selection-end="4826" vertical-scroll-proportion="0.65779465" vertical-offset="1161" max-vertical-offset="1950">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/static/js/account.js">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="0" selection-start="3277" selection-end="3277" vertical-scroll-proportion="-20.115385" vertical-offset="1337" max-vertical-offset="2160">
+            <state line="7" column="17" selection-start="247" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -155,7 +147,6 @@
         <option value="$PROJECT_DIR$/account/templates/account/register.html" />
         <option value="$PROJECT_DIR$/search/templates/search/search.html" />
         <option value="$PROJECT_DIR$/account/static/js/review.js" />
-        <option value="$PROJECT_DIR$/account/templates/account/my-reviews.html" />
         <option value="$PROJECT_DIR$/restaurant/static/js/restaurant.js" />
         <option value="$PROJECT_DIR$/account/forms.py" />
         <option value="$PROJECT_DIR$/restaurant/templates/restaurant/restaurant_menu.html" />
@@ -177,6 +168,7 @@
         <option value="$PROJECT_DIR$/account/templates/account/activate-page.html" />
         <option value="$PROJECT_DIR$/restaurant/views.py" />
         <option value="$PROJECT_DIR$/account/views.py" />
+        <option value="$PROJECT_DIR$/account/templates/account/my-reviews.html" />
       </list>
     </option>
   </component>
@@ -925,7 +917,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31505015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31505015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1050,11 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="247" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restaurant/static/js/restaurant.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="121" selection-start="1722" selection-end="1826" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1350" />
@@ -1063,13 +1050,6 @@
     <entry file="file://$PROJECT_DIR$/account/static/js/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account/templates/account/my-reviews.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/account/templates/account/my-restaurants.html">
@@ -1096,11 +1076,6 @@
         <state line="14" column="5" selection-start="378" selection-end="378" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="405">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restaurant/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yummy/static/js/yummy.js">
@@ -1137,28 +1112,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="789" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restaurant/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="15" selection-start="286" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yummy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="33" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="12" selection-start="330" selection-end="338" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="24" selection-start="4439" selection-end="4447" vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1950">
           <folding />
         </state>
       </provider>
@@ -1241,26 +1197,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="693" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/templates/account/activate-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="405">
+        <state line="12" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="390">
           <folding>
             <element signature="e#297#332#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restaurant/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="27" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="825">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1273,7 +1215,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="85" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.608365" vertical-offset="225" max-vertical-offset="4230">
+        <state line="62" column="85" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="4230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="247" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="20" selection-start="693" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="94" selection-start="151" selection-end="166" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/templates/account/my-reviews.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="68" selection-start="475" selection-end="475" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="9" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="11" selection-start="364" selection-end="371" vertical-scroll-proportion="0.17693315" vertical-offset="0" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="0" selection-start="4576" selection-end="4826" vertical-scroll-proportion="0.65779465" vertical-offset="1161" max-vertical-offset="1950">
           <folding />
         </state>
       </provider>
